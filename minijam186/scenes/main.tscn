@@ -32,6 +32,7 @@ position = Vector2(266, 361)
 position = Vector2(546, 388)
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
+z_index = 2
 position = Vector2(231, 385)
 
 [node name="down_boundary" type="Area2D" parent="."]
