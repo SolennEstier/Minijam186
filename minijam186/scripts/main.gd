@@ -5,13 +5,19 @@ extends Node2D
 
 func _on_juggler_body_ball_caught(body) -> void:
 	print('attrapé !')
-	# faire disparaitre la balle concernée, genre body.queue_free()
+	body.queue_free()
 	# Lancer animation de bravo + son de bravo
 	pass # Replace with function body.
 
-func ball_missed():
-	pass
+func ball_missed(body):
+	body.queue_free()
+	print("Raté !")
 
 
 func _on_player_body_throw_ball(angle) -> void:
 	ball.throw(angle)
+
+
+func _on_down_boundary_body_entered(body: Node2D) -> void:
+	ball_missed(body)
+	

@@ -13,6 +13,6 @@ func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 	self.velocity = Vector2(0,0)
 
 func move_towards_ball(ball_final_position):
-	var y_speed = ball_final_position - self.position.x
-	self.velocity = Vector2()
+	var x_speed = ball_final_position - self.position.x
+	self.velocity = Vector2(x_speed, 0)
 	pass
