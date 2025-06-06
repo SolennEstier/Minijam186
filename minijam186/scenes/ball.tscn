@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbf2iy84v21yy"]
+[gd_scene load_steps=5 format=3 uid="uid://cbf2iy84v21yy"]
 
 [ext_resource type="Script" uid="uid://dn01qpk3iojrs" path="res://scripts/ball.gd" id="1_7s4qf"]
 [ext_resource type="Texture2D" uid="uid://bn66f16st1p1c" path="res://assets/Placeholders/Placeholder_ball.jpg" id="2_cxlvu"]
-[ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="3_f7cbr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f7cbr"]
 animations = [{
@@ -29,8 +28,3 @@ sprite_frames = SubResource("SpriteFrames_f7cbr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_cxlvu")
-
-[node name="Impact_point" type="Sprite2D" parent="."]
-position = Vector2(-1.19209e-07, 0.5)
-scale = Vector2(0.15625, 0.117188)
-texture = ExtResource("3_f7cbr")
