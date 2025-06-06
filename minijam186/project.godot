@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="minijam186"
+run/main_scene="uid://dm53thglra83n"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
