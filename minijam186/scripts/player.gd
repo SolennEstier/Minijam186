@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 		if arrow.rotation_degrees < 0 :
 			arrow.rotation_degrees += angle_move_speed
 	if Input.is_action_just_pressed("throw"):
-		throw_ball.emit()
+		throw_ball.emit(arrow.rotation_degrees)
