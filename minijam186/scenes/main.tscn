@@ -4,3 +4,16 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o5qli")
+
+[node name="backgrounds_placeholder" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.593134, 0.593134, 0.593134, 1)
+
+[node name="ColorRect" type="ColorRect" parent="backgrounds_placeholder"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 110.0
+offset_right = 953.0
+offset_bottom = 424.0
+color = Color(0.309804, 0.678431, 1, 1)
