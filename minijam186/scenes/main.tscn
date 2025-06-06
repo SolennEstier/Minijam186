@@ -11,6 +11,7 @@ script = ExtResource("1_o5qli")
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0.593134, 0.593134, 0.593134, 1)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="backgrounds_placeholder"]
 layout_mode = 0
@@ -24,4 +25,6 @@ color = Color(0.309804, 0.678431, 1, 1)
 position = Vector2(546, 388)
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(234, 386)
+position = Vector2(231, 385)
+
+[connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
