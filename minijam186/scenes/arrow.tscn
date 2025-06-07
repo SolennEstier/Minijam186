@@ -14,6 +14,7 @@ animations = [{
 }]
 
 [node name="Arrow" type="Node2D"]
+rotation = -0.523599
 
 [node name="arrow_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 11)

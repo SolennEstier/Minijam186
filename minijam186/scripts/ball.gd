@@ -6,4 +6,4 @@ func _ready() -> void:
 
 func throw(angle: float, force, velocity):
 	gravity_scale = 1
-	set_linear_velocity(velocity)
+	set_linear_velocity(velocity*1.04)
