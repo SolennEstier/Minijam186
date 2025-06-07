@@ -47,7 +47,8 @@ func _on_player_body_throw_ball(angle, impact_point, force) -> void:
 
 
 func _on_down_boundary_body_entered(body: Node2D) -> void:
-	ball_missed(body)
+	if body.is_in_group('ball'):
+		ball_missed(body)
 	
 	
 func public_congratulations():
