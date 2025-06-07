@@ -22,6 +22,7 @@ LevelHandler="*res://scripts/level_handler.gd"
 [global_group]
 
 ball=""
+obstacle=""
 
 [input]
 

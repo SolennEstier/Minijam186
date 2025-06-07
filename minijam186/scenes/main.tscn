@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=20 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -13,12 +13,28 @@
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="14_a8y0u"]
+[ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(179, 537)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkv2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_a8y0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbj1t"]
+size = Vector2(86, 97)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -111,7 +127,29 @@ theme = ExtResource("6_o6xl0")
 theme_override_font_sizes/normal_font_size = 30
 text = "Move trajectory with arrows"
 
+[node name="Obstacle" type="StaticBody2D" parent="." groups=["obstacle"]]
+position = Vector2(116, 101)
+script = ExtResource("14_jkv2x")
+
+[node name="Obstacle_sprite" type="AnimatedSprite2D" parent="Obstacle"]
+position = Vector2(-21.5, -22)
+scale = Vector2(0.664063, 0.734375)
+sprite_frames = SubResource("SpriteFrames_jkv2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+position = Vector2(-21, -21.5)
+shape = SubResource("RectangleShape2D_jbj1t")
+
+[node name="Button" type="Button" parent="Obstacle"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -65.0
+offset_top = -71.0
+offset_right = 21.0
+offset_bottom = 26.0
+
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]
 [connection signal="timeout" from="public_bubble_1_timer" to="." method="_on_public_bubble_1_timer_timeout"]
+[connection signal="button_down" from="Obstacle/Button" to="Obstacle" method="_on_button_button_down"]
+[connection signal="button_up" from="Obstacle/Button" to="Obstacle" method="_on_button_button_up"]
