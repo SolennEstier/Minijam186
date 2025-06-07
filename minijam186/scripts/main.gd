@@ -71,3 +71,5 @@ func _on_public_bubble_1_timer_timeout() -> void:
 func set_level(new_level):
 	juggler_body.set_level(new_level)
 	player_body.level = new_level
+	if new_level != 0:
+		player_body.move_allowed = 0
