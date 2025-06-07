@@ -6,9 +6,11 @@ extends Node2D
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
 @onready var active_ball = ball
+@onready var public_bubble_1: TextureRect = $public_bubble_1
 
 func _ready():
 	start_ball_position = ball.position
+	public_bubble_1.visible = false
 	pass
 
 func _on_juggler_body_ball_caught(body) -> void:
@@ -21,6 +23,7 @@ func _on_juggler_body_ball_caught(body) -> void:
 	add_child(new_ball)
 	new_ball.position = start_ball_position
 	active_ball = new_ball
+	public_bubble_1.visible = true
 	pass # Replace with function body.
 
 func ball_missed(body):

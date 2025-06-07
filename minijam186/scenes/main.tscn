@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=9 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bvdra1l0m5w65" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cbf2iy84v21yy" path="res://scenes/ball.tscn" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="5_tefeu"]
+[ext_resource type="Theme" uid="uid://dkl0fj6cxhn27" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -61,13 +63,28 @@ offset_bottom = 610.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="public_placeholder"]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 65.0
-offset_right = 616.0
-offset_bottom = 105.0
+offset_left = 286.0
+offset_top = 66.0
+offset_right = 644.0
+offset_bottom = 106.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "Ici y'aura le public"
+
+[node name="public_bubble_1" type="TextureRect" parent="."]
+offset_top = 477.0
+offset_right = 274.0
+offset_bottom = 691.0
+texture = ExtResource("5_tefeu")
+
+[node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_1"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 62.0
+offset_right = 229.0
+offset_bottom = 120.0
+theme = ExtResource("6_o6xl0")
+text = "This is so great !"
 
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
