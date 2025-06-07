@@ -44,6 +44,8 @@ func ball_missed(body):
 	new_ball.position = start_ball_position
 	active_ball = new_ball
 	ballmissed.play()
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
 
 
 func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
