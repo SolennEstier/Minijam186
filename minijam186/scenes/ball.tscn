@@ -1,13 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbf2iy84v21yy"]
+[gd_scene load_steps=9 format=3 uid="uid://cbf2iy84v21yy"]
 
 [ext_resource type="Script" uid="uid://dn01qpk3iojrs" path="res://scripts/ball.gd" id="1_7s4qf"]
-[ext_resource type="Texture2D" uid="uid://bn66f16st1p1c" path="res://assets/Placeholders/Placeholder_ball.jpg" id="2_cxlvu"]
+[ext_resource type="Texture2D" uid="uid://dauoc0ir7xdmg" path="res://assets/animations/Ball-1.png" id="2_jj7gd"]
+[ext_resource type="Texture2D" uid="uid://cqeywpk33a3f6" path="res://assets/animations/Ball-2.png" id="3_fwo8l"]
+[ext_resource type="Texture2D" uid="uid://dqs3i282ad1rd" path="res://assets/animations/Ball-3.png" id="4_v8l5b"]
+[ext_resource type="Texture2D" uid="uid://cslxl2ca6kx74" path="res://assets/animations/Ball-4.png" id="5_iijjg"]
+[ext_resource type="Texture2D" uid="uid://ch7u5mtngo5s1" path="res://assets/animations/Ball-5.png" id="6_f7kxq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f7cbr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cxlvu")
+"texture": ExtResource("2_jj7gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fwo8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v8l5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iijjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f7kxq")
 }],
 "loop": true,
 "name": &"default",
