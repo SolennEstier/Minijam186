@@ -38,6 +38,7 @@ func ball_missed(body):
 
 func _on_player_body_throw_ball(angle, impact_point) -> void:
 	active_ball.throw(angle)
+	juggler_body.move_towards_ball(impact_point)
 
 
 func _on_down_boundary_body_entered(body: Node2D) -> void:
