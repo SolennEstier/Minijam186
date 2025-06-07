@@ -53,6 +53,22 @@ collision_mask = 3
 position = Vector2(1046.5, 333)
 shape = SubResource("RectangleShape2D_tbgi4")
 
+[node name="public_placeholder" type="ColorRect" parent="."]
+offset_left = 186.0
+offset_top = 447.0
+offset_right = 955.0
+offset_bottom = 610.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="public_placeholder"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 65.0
+offset_right = 616.0
+offset_bottom = 105.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Ici y'aura le public"
+
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]

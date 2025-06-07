@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal ball_caught
 
-var move_speed = 200
+var move_speed = -30
 
 var target_position = 0
 
