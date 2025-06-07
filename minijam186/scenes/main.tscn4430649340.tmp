@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
-[ext_resource type="Script" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
+[ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
@@ -30,8 +30,7 @@ scale = Vector2(0.53287, 0.4)
 texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(249, 366)
-scale = Vector2(3, 3)
+position = Vector2(266, 361)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(564, 400)
@@ -57,7 +56,6 @@ position = Vector2(1046.5, 333)
 shape = SubResource("RectangleShape2D_tbgi4")
 
 [node name="Node2D" parent="." instance=ExtResource("6_ya4ey")]
-position = Vector2(-6, 2)
 
 [node name="public_bubble_1" type="TextureRect" parent="."]
 offset_top = 477.0

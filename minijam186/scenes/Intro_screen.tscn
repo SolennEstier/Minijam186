@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://6a7hgryr1g5q"]
+
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="1_5jhsw"]
+[ext_resource type="Script" uid="uid://c6rlxobky1s6e" path="res://scripts/intro_screen.gd" id="1_kov8j"]
+[ext_resource type="Resource" uid="uid://dye62h1o6qfct" path="res://assets/dialogues.tres" id="2_k3ydu"]
+
+[node name="IntroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kov8j")
+dialogue = ExtResource("2_k3ydu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 650.0
+color = Color(0.609339, 0, 0.0948253, 1)
+
+[node name="juggler_dialogue" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 92.0
+offset_right = 1078.0
+offset_bottom = 244.0
+theme = ExtResource("1_5jhsw")
+theme_override_font_sizes/normal_font_size = 40
+text = "Hi ! Thank you so much for helping me with my show, you are so nice =)"
+
+[node name="player_dialogue" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 416.0
+offset_right = 705.0
+offset_bottom = 568.0
+theme = ExtResource("1_5jhsw")
+theme_override_font_sizes/normal_font_size = 40
+text = "Haha, no problem !
+(I will ruin you)"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 493.0
+offset_right = 1061.0
+offset_bottom = 604.0
+theme = ExtResource("1_5jhsw")
+text = "Start the show"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

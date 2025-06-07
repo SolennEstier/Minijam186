@@ -22,6 +22,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 4.87
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qx0cp")
+}],
+"loop": true,
+"name": &"skater_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtckm"]
