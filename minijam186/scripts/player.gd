@@ -3,13 +3,14 @@ extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
 @onready var trajectory: Line2D = $Trajectory
 
+var force = 600
 
 signal throw_ball
 
 var angle_move_speed = 2
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var world_boundary_y = 42
-var force = 600
+
 
 
 func _process(delta: float) -> void:
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 	create_interpolation_points(parabola_coeffs,100, impact_points)
 	
 	if Input.is_action_just_pressed("throw"):
-		throw_ball.emit(arrow.rotation_degrees,impact_points[0])
+		throw_ball.emit(arrow.rotation_degrees,impact_points[0], force)
 		
 	#draw trajectory
 	queue_redraw()
