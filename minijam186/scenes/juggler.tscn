@@ -69,7 +69,7 @@ position = Vector2(-3, -103)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_qtckm")
 autoplay = "default"
-frame_progress = 0.544184
+frame_progress = 0.237718
 
 [node name="juggler_detection_area" type="Area2D" parent="."]
 
