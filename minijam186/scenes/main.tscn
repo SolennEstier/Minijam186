@@ -86,6 +86,11 @@ offset_bottom = 120.0
 theme = ExtResource("6_o6xl0")
 text = "This is so great !"
 
+[node name="public_bubble_1_timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]
+[connection signal="timeout" from="public_bubble_1_timer" to="." method="_on_public_bubble_1_timer_timeout"]
