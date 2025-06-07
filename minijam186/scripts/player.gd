@@ -10,7 +10,7 @@ extends CharacterBody2D
 signal throw_ball
 
 var angle_move_speed = 2
-var force = 600
+var force = 800
 
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var world_boundary_y = 42
@@ -76,7 +76,6 @@ func create_interpolation_points(parabola_coeffs, n, impact_points):
 	var p1 = arrow.position.x
 	var p2 = arrow.position.y
 	
-
 	trajectory.clear_points()
 	
 	for i in range(n):
