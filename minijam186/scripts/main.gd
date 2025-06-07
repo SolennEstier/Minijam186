@@ -55,6 +55,7 @@ func ball_missed(body):
 	new_ball.position = start_ball_position
 	active_ball = new_ball
 	ballmissed.play()
+	node_2d.choque_and_decu()
 	await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
 
