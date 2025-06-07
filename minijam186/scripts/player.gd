@@ -12,7 +12,8 @@ signal throw_ball
 var angle_move_speed = 2
 var force = 650
 
-var gravity = 980.0
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 var world_boundary_y = 42
 
 
