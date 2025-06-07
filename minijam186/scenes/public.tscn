@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6j3xb70lm2la"]
+
+[ext_resource type="Texture2D" uid="uid://bwbt41u76n0m3" path="res://assets/animations/Gauche_Droite-1.png" id="1_conr0"]
+[ext_resource type="Texture2D" uid="uid://dlx07a0bcrlaw" path="res://assets/animations/Gauche_Droite-2.png" id="2_ml6ga"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75dnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_conr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ml6ga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="public" type="Node2D"]
+
+[node name="public sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(0.534259, 0.4)
+sprite_frames = SubResource("SpriteFrames_75dnk")
