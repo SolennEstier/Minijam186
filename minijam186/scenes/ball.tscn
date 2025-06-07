@@ -37,9 +37,10 @@ radius = 9.0
 script = ExtResource("1_7s4qf")
 
 [node name="Ball_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 2)
 scale = Vector2(0.333334, 0.338607)
 sprite_frames = SubResource("SpriteFrames_f7cbr")
+frame_progress = 0.377784
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -2)
 shape = SubResource("CircleShape2D_jj7gd")

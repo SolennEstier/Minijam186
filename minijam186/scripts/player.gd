@@ -89,7 +89,7 @@ func create_interpolation_points(parabola_coeffs, n, impact_points):
 
 func _draw():
 	trajectory.closed = false
-	draw_polyline(trajectory.points, Color.RED, 2.0)
+	draw_polyline(trajectory.points,Color.TRANSPARENT, 2.0)
 	var arrow_test = Vector2(arrow.position.x,arrow.position.y)
 	
 	
