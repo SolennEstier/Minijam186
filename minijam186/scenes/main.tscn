@@ -93,6 +93,25 @@ stream = ExtResource("8_85g3d")
 [node name="ballmissed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_choun")
 
+[node name="Tutorial1" type="RichTextLabel" parent="."]
+offset_left = 322.0
+offset_top = 130.0
+offset_right = 833.0
+offset_bottom = 170.0
+theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 30
+text = "Use Space Bar to Throw Ball"
+
+[node name="Tutorial2" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 309.0
+offset_top = 186.0
+offset_right = 862.0
+offset_bottom = 226.0
+theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 30
+text = "Move trajectory with arrows"
+
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]
