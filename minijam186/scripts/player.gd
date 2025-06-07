@@ -26,20 +26,23 @@ func _process(delta: float) -> void:
 			arrow.rotation_degrees += angle_move_speed
 		
 	#updating trajectory
-	var parabola_coeffs = determine_parabola(arrow.rotation_degrees)
+	var ball_velocity = determine_ball_velocity(arrow.rotation_degrees,force)
+	var parabola_coeffs = determine_parabola(ball_velocity)
 	var impact_points = calculate_impact_points(parabola_coeffs)
 	create_interpolation_points(parabola_coeffs,100, impact_points)
 	
 	if Input.is_action_just_pressed("throw"):
-		throw_ball.emit(arrow.rotation_degrees,impact_points[0], force)
+		throw_ball.emit(arrow.rotation_degrees,impact_points[0], force, ball_velocity)
 		
 	#draw trajectory
 	queue_redraw()
 	
-		
-func determine_parabola(angle):
-	
+func determine_ball_velocity(angle,force):	
 	var ball_velocity = Vector2(1, tan(angle/180*3.14)).normalized()*force
+	return ball_velocity
+	
+		
+func determine_parabola(ball_velocity):
 	#define parameters of the parabola
 	var p1 = arrow.position.x
 	var p2 = arrow.position.y 
