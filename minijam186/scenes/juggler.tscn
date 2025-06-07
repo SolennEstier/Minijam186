@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfdgabkuqey76"]
+[gd_scene load_steps=15 format=3 uid="uid://cfdgabkuqey76"]
 
 [ext_resource type="Script" uid="uid://cd65dowovtx7i" path="res://scripts/juggler.gd" id="1_f65hk"]
 [ext_resource type="Texture2D" uid="uid://bpbetpksk7nko" path="res://assets/animations/Jongleuse-1.png" id="2_qtckm"]
 [ext_resource type="Texture2D" uid="uid://bq147ljwayncb" path="res://assets/animations/Jongleuse-2.png" id="3_qx0cp"]
+[ext_resource type="Script" uid="uid://cwidp5gcpfpdu" path="res://scripts/ball_follow.gd" id="4_y2wo8"]
+[ext_resource type="Texture2D" uid="uid://dauoc0ir7xdmg" path="res://assets/animations/Ball-1.png" id="5_52e1b"]
+[ext_resource type="Texture2D" uid="uid://cqeywpk33a3f6" path="res://assets/animations/Ball-2.png" id="6_ne2sp"]
+[ext_resource type="Texture2D" uid="uid://dqs3i282ad1rd" path="res://assets/animations/Ball-3.png" id="7_0s3wx"]
+[ext_resource type="Texture2D" uid="uid://cslxl2ca6kx74" path="res://assets/animations/Ball-4.png" id="8_3tjnx"]
+[ext_resource type="Texture2D" uid="uid://ch7u5mtngo5s1" path="res://assets/animations/Ball-5.png" id="9_uca7h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtckm"]
 animations = [{
@@ -15,7 +21,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.87
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtckm"]
@@ -23,6 +29,35 @@ size = Vector2(268, 303)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx0cp"]
 size = Vector2(271, 304)
+
+[sub_resource type="Curve2D" id="Curve2D_h8yho"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -102, -191, 0, 0, 0, 0, 6, -319, 0, 0, 0, 0, 68, -303, 0, 0, 0, 0, 91, -152, 0, 0, 0, 0, 104, -124, 0, 0, 0, 0, 132, -141, 0, 0, 0, 0, 92, -244, 0, 0, 0, 0, 9, -343, 0, 0, 0, 0, -21, -347, 0, 0, 0, 0, -74, -287, 0, 0, 0, 0, -102, -191)
+}
+point_count = 11
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knw5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_52e1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ne2sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0s3wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3tjnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uca7h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="juggler_body" type="CharacterBody2D"]
 collision_layer = 2
@@ -33,6 +68,8 @@ script = ExtResource("1_f65hk")
 position = Vector2(-3, -103)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_qtckm")
+autoplay = "default"
+frame_progress = 0.544184
 
 [node name="juggler_detection_area" type="Area2D" parent="."]
 
@@ -43,5 +80,19 @@ shape = SubResource("RectangleShape2D_qtckm")
 [node name="juggler_collision" type="CollisionShape2D" parent="." groups=["juggler"]]
 position = Vector2(-1.5, -101)
 shape = SubResource("RectangleShape2D_qx0cp")
+
+[node name="juggler_balls" type="Path2D" parent="."]
+curve = SubResource("Curve2D_h8yho")
+
+[node name="ball" type="PathFollow2D" parent="juggler_balls"]
+position = Vector2(-102, -191)
+rotation = 1.85459
+progress = 897.882
+script = ExtResource("4_y2wo8")
+
+[node name="Ball_sprite" type="AnimatedSprite2D" parent="juggler_balls/ball"]
+scale = Vector2(0.333334, 0.338607)
+sprite_frames = SubResource("SpriteFrames_knw5d")
+autoplay = "default"
 
 [connection signal="body_entered" from="juggler_detection_area" to="." method="_on_juggler_detection_area_body_entered"]
