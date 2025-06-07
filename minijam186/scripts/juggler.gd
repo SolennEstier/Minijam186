@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal ball_caught
 
 var move_speed = 30
-var level = 2
+var level: int
 
 var target_position = 0
 
@@ -24,6 +24,8 @@ func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 	velocity = Vector2(0,0)
 
 func move_towards_ball(ball_final_position):
+	if level == 0:
+		move_speed = 0
 	if level == 2 :
 		move_speed = 90
 	target_position = ball_final_position + 200

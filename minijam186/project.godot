@@ -15,6 +15,10 @@ run/main_scene="uid://dm53thglra83n"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+LevelHandler="*res://scripts/level_handler.gd"
+
 [global_group]
 
 ball=""

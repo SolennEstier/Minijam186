@@ -8,12 +8,16 @@ extends Node2D
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
+var current_level: int
+
 @export var dialogue: Dialogue
 
 @onready var active_ball = ball
 @onready var public_bubble_1: TextureRect = $public_bubble_1
 
 func _ready():
+	current_level = LevelHandler.current_level
+	set_level(current_level)
 	start_ball_position = ball.position
 	public_bubble_1.visible = false
 	pass
@@ -61,3 +65,7 @@ func public_congratulations():
 	
 func _on_public_bubble_1_timer_timeout() -> void:
 	public_bubble_1.visible = false
+
+func set_level(new_level):
+	juggler_body.level = new_level
+	player_body.level = new_level
