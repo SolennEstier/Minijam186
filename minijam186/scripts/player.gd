@@ -12,7 +12,7 @@ signal throw_ball
 
 var move_allowed = true
 var level: int
-var angle_move_speed = 2
+var angle_move_speed = 1.5
 var force = 650
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
