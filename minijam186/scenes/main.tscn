@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bvdra1l0m5w65" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cbf2iy84v21yy" path="res://scenes/ball.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="5_tefeu"]
-[ext_resource type="Theme" uid="uid://dkl0fj6cxhn27" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
