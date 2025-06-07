@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6j3xb70lm2la"]
+[gd_scene load_steps=8 format=3 uid="uid://c6j3xb70lm2la"]
 
 [ext_resource type="Texture2D" uid="uid://bwbt41u76n0m3" path="res://assets/animations/Gauche_Droite-1.png" id="1_conr0"]
+[ext_resource type="Script" uid="uid://belq3bjw4kcl1" path="res://scripts/public.gd" id="1_ml6ga"]
 [ext_resource type="Texture2D" uid="uid://dlx07a0bcrlaw" path="res://assets/animations/Gauche_Droite-2.png" id="2_ml6ga"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75dnk"]
@@ -17,11 +18,50 @@ animations = [{
 "speed": 2.43
 }]
 
+[sub_resource type="Animation" id="Animation_ml6ga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("public sprite:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.433333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_conr0"]
 resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("public sprite:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -29,22 +69,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.466667, 1.03333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [324.0, 324.0, 324.0]
+"values": [324.0, Vector2(0, 50), 324.0]
 }
-
-[sub_resource type="Animation" id="Animation_ml6ga"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("public sprite:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [324.0]
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_75dnk"]
@@ -54,6 +91,7 @@ _data = {
 }
 
 [node name="public" type="Node2D"]
+script = ExtResource("1_ml6ga")
 
 [node name="public sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(575, 324)

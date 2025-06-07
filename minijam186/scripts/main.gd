@@ -5,6 +5,7 @@ extends Node2D
 @onready var public_bubble_1_timer: Timer = $public_bubble_1_timer
 @onready var ballreceived: AudioStreamPlayer = $ballreceived
 @onready var ballmissed: AudioStreamPlayer = $ballmissed
+@onready var node_2d: Node2D = $Node2D
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
@@ -64,6 +65,7 @@ func public_congratulations():
 	public_bubble_1.change_text(message)
 	public_bubble_1_timer.start()
 	ballreceived.play()
+	node_2d.jumping()
 	
 func _on_public_bubble_1_timer_timeout() -> void:
 	public_bubble_1.visible = false
