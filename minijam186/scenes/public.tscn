@@ -14,7 +14,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.43
 }]
 
 [node name="public" type="Node2D"]
@@ -23,3 +23,4 @@ animations = [{
 position = Vector2(575, 324)
 scale = Vector2(0.534259, 0.4)
 sprite_frames = SubResource("SpriteFrames_75dnk")
+autoplay = "default"
