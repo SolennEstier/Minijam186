@@ -8,6 +8,7 @@ extends Node2D
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
+@export var dialogue: Dialogue
 
 @onready var active_ball = ball
 @onready var public_bubble_1: TextureRect = $public_bubble_1
@@ -51,8 +52,9 @@ func _on_down_boundary_body_entered(body: Node2D) -> void:
 	
 	
 func public_congratulations():
-	# TODO : add randomization amongst bubbles and text
+	var message = dialogue.applause.pick_random()
 	public_bubble_1.visible = true
+	public_bubble_1.change_text(message)
 	public_bubble_1_timer.start()
 	ballreceived.play()
 	
