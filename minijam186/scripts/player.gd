@@ -9,7 +9,8 @@ extends CharacterBody2D
 
 signal throw_ball
 
-var move_allowed = 2
+
+var move_allowed = true
 var level: int
 var angle_move_speed = 1.5
 var force = 650
@@ -21,10 +22,10 @@ var world_boundary_y = 42
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("left") and move_allowed == 0:
+	if Input.is_action_pressed("left") and move_allowed == true:
 		if arrow.rotation_degrees > -45 :
 			arrow.rotation_degrees -= angle_move_speed
-	if Input.is_action_pressed("right") and move_allowed == 0:
+	if Input.is_action_pressed("right") and move_allowed == true:
 		if arrow.rotation_degrees < 0 :
 			arrow.rotation_degrees += angle_move_speed
 		
@@ -36,8 +37,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("throw"):
 		throw_ball.emit(arrow.rotation_degrees,impact_points[0], force, ball_velocity)
-		if move_allowed != 0:
-			move_allowed -= 1
+
 		
 	#draw trajectory
 	queue_redraw()

@@ -9,4 +9,6 @@ class_name Dialogue
 'Haha, no problem ! (I will replace you soon)'], 
 ['Sorry I missed, i will try harder next time','...'],
 ["I wasn't quick enough this time, but please bear with me ","..."],
+['',''],
+['',''],
 ['','']]

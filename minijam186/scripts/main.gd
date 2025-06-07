@@ -6,10 +6,12 @@ extends Node2D
 @onready var ballreceived: AudioStreamPlayer = $ballreceived
 @onready var ballmissed: AudioStreamPlayer = $ballmissed
 @onready var node_2d: Node2D = $Node2D
+@onready var tutorial_2: RichTextLabel = $Tutorial2
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
 var current_level: int
+var fixed_moves = 2
 
 @export var dialogue: Dialogue
 
@@ -21,7 +23,11 @@ func _ready():
 	set_level(current_level)
 	start_ball_position = ball.position
 	public_bubble_1.visible = false
-	pass
+	if current_level > 0 :
+		tutorial_2.visible = true
+	elif current_level == 0 :
+		player_body.move_allowed = false
+
 
 func _on_juggler_body_ball_caught(body) -> void:
 	print('attrapé !')
@@ -34,7 +40,11 @@ func _on_juggler_body_ball_caught(body) -> void:
 	new_ball.position = start_ball_position
 	active_ball = new_ball
 	public_congratulations()
-	pass # Replace with function body.
+	if current_level == 0:
+		fixed_moves -= 1
+		if fixed_moves == 0:
+			player_body.move_allowed = true
+			tutorial_2.visible = true
 
 func ball_missed(body):
 	body.queue_free()
@@ -74,4 +84,4 @@ func set_level(new_level):
 	juggler_body.set_level(new_level)
 	player_body.level = new_level
 	if new_level != 0:
-		player_body.move_allowed = 0
+		player_body.move_allowed = true
