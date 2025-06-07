@@ -30,8 +30,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxlvu"]
-size = Vector2(22.75, 25.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jj7gd"]
+radius = 9.0
 
 [node name="Ball" type="RigidBody2D" groups=["ball"]]
 script = ExtResource("1_7s4qf")
@@ -41,4 +41,5 @@ scale = Vector2(0.333334, 0.338607)
 sprite_frames = SubResource("SpriteFrames_f7cbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cxlvu")
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_jj7gd")
