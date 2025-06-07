@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvdra1l0m5w65"]
+[gd_scene load_steps=7 format=3 uid="uid://bvdra1l0m5w65"]
 
 [ext_resource type="Texture2D" uid="uid://baxwk3kg407nv" path="res://assets/Placeholders/player_placeholder.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bct0srgw87c1t" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://dtvy1qkkble4r" path="res://scenes/arrow.tscn" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://vd1k56472g3j" path="res://assets/Placeholders/dashed_line_test.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="5_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -30,5 +31,9 @@ position = Vector2(19, -19)
 width = 2.0
 default_color = Color(1, 1, 1, 0)
 texture = ExtResource("4_dqkch")
+
+[node name="ImpactPoint" type="Sprite2D" parent="."]
+scale = Vector2(0.265625, 0.253906)
+texture = ExtResource("5_qlg0r")
 
 [connection signal="throw_ball" from="." to="." method="_on_throw_ball"]

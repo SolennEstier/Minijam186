@@ -3,11 +3,15 @@ extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $player_sprite
 @onready var trajectory: Line2D = $Trajectory
 
-var force = 600
+@onready var impact_point: Sprite2D = $ImpactPoint
+
+
 
 signal throw_ball
 
 var angle_move_speed = 2
+var force = 600
+
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var world_boundary_y = 42
 
@@ -54,9 +58,11 @@ func calculate_impact_points(parabola_coeffs):
 	
 	var a = parabola_coeffs[0]
 	var b = -2*a*p1+parabola_coeffs[1]
-	var c = a*p1*p1+parabola_coeffs[2]-impact_point_y
+	var c = a*p1*p1 + parabola_coeffs[2]- impact_point_y
 
 	var impact_point_x = (-b+sqrt(b*b-4*a*c))/(2*a)
+	impact_point.position.x = impact_point_x
+	impact_point.position.y = impact_point_y
 	
 	var impact_points = Vector2(impact_point_x,impact_point_y)
 	return impact_points
