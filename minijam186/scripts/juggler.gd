@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var juggler_sprite: AnimatedSprite2D = $juggler_sprite
 
 signal ball_caught
 
@@ -9,6 +10,11 @@ var target_position = 0
 
 func _ready():
 	pass
+
+func set_level(new_level):
+	level = new_level
+	if level == 3:
+		juggler_sprite.animation = "skater_animation"
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
@@ -27,7 +33,9 @@ func move_towards_ball(ball_final_position):
 	if level == 0:
 		move_speed = 0
 	if level == 2 :
-		move_speed = 90
+		move_speed = 120
+	if level == 3:
+		pass
 	target_position = ball_final_position + 200
 	print('le jongleur est en ', position.x, 'et larrivée en ', target_position )
 	var x_speed = target_position  - (position.x)

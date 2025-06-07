@@ -69,5 +69,5 @@ func _on_public_bubble_1_timer_timeout() -> void:
 	public_bubble_1.visible = false
 
 func set_level(new_level):
-	juggler_body.level = new_level
+	juggler_body.set_level(new_level)
 	player_body.level = new_level
