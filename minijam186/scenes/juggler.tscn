@@ -34,6 +34,7 @@ size = Vector2(268, 303)
 size = Vector2(271, 304)
 
 [node name="juggler_body" type="CharacterBody2D"]
+z_index = 5
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_f65hk")
