@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-var force = 500.0
+var force = 600.0
 
 
 
