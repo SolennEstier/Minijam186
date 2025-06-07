@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 #FAUX FAUX FAUX à recalculer
 func calculate_impact_position(position_juggler):
 	var impact_x = 1/gravity*(-force+gravity*self.position[0]+sqrt(force*force-2*gravity*self.position[1]))
-	print(-force+gravity*self.position[0])
+	#print(-force+gravity*self.position[0])
 	var impact_y = position_juggler[1]
 	var impact = [impact_x,impact_y]
 	return impact

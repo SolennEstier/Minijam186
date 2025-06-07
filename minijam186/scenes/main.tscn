@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=7 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -8,7 +8,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(179, 537)
+
+[node name="main" type="Node2D"]
 script = ExtResource("1_o5qli")
 
 [node name="backgrounds_placeholder" type="ColorRect" parent="."]
@@ -40,6 +43,12 @@ position = Vector2(231, 385)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down_boundary"]
 position = Vector2(574, 434)
 shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="right_boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_boundary"]
+position = Vector2(1046.5, 333)
+shape = SubResource("RectangleShape2D_tbgi4")
 
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
