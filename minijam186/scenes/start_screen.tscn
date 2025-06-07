@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce0semqajaya3"]
+[gd_scene load_steps=4 format=3 uid="uid://ce0semqajaya3"]
 
 [ext_resource type="Script" uid="uid://cxfo1sd8uiq2x" path="res://scripts/start_screen.gd" id="1_tx5wa"]
 [ext_resource type="Texture2D" uid="uid://dh2i7qpak7yj5" path="res://assets/Screens/Start.png" id="2_o7i0r"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="3_he1sj"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -12,13 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tx5wa")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 393.0
-offset_top = 359.0
-offset_right = 770.0
-offset_bottom = 503.0
-text = "Start playing"
+[node name="Start" type="Sprite2D" parent="."]
+position = Vector2(576, 323.5)
+scale = Vector2(0.532407, 0.399383)
+texture = ExtResource("2_o7i0r")
 
 [node name="startscreen_background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,9 +24,13 @@ offset_right = 1147.0
 offset_bottom = 646.0
 metadata/_edit_lock_ = true
 
-[node name="Start" type="Sprite2D" parent="."]
-position = Vector2(576, 323.5)
-scale = Vector2(0.532407, 0.399383)
-texture = ExtResource("2_o7i0r")
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 117.0
+offset_right = 762.0
+offset_bottom = 261.0
+theme = ExtResource("3_he1sj")
+text = "Start playing"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

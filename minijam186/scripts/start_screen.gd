@@ -3,5 +3,4 @@ extends Control
 
 
 func _on_button_pressed() -> void:
-	# switch to main scene
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
