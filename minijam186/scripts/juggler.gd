@@ -1,7 +1,8 @@
 extends CharacterBody2D
 @onready var juggler_sprite: AnimatedSprite2D = $juggler_sprite
-
+const BALL_IN = preload("res://scenes/ball_in.tscn")
 signal ball_caught
+@onready var all_ball: Path2D = $all_ball
 
 var move_speed = 30
 var level: int
@@ -25,9 +26,15 @@ func _physics_process(delta: float) -> void:
 func stop():
 	velocity = Vector2(0,0)	
 
+func new_ball():
+	var new_ball=BALL_IN.instantiate()
+	all_ball.add_child(new_ball)
+	print('add a ball')
+	
 func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 	ball_caught.emit(body)
 	velocity = Vector2(0,0)
+	new_ball()
 
 func move_towards_ball(ball_final_position):
 	if level == 0:
