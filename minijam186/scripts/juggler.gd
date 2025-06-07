@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal ball_caught
 
-var move_speed = 100
+var move_speed = 200
 
 var target_position = 0
 
@@ -10,8 +10,9 @@ func _ready():
 	move_towards_ball(900)
 
 func _physics_process(delta: float) -> void:
-	move_and_collide(velocity * delta)
-
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		print("I collided with ", collision.get_collider().name)
 	
 	
 func stop():

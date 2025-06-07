@@ -15,6 +15,10 @@ run/main_scene="uid://dm53thglra83n"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[global_group]
+
+ball=""
+
 [input]
 
 right={

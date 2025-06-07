@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxlvu"]
 size = Vector2(47.5, 53)
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D" groups=["ball"]]
 script = ExtResource("1_7s4qf")
 
 [node name="Ball_sprite" type="AnimatedSprite2D" parent="."]

@@ -33,6 +33,7 @@ position = Vector2(266, 361)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(546, 388)
+motion_mode = 1
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
 z_index = 2
@@ -45,6 +46,8 @@ position = Vector2(574, 434)
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="right_boundary" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_boundary"]
 position = Vector2(1046.5, 333)

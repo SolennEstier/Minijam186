@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfdgabkuqey76"]
+[gd_scene load_steps=6 format=3 uid="uid://cfdgabkuqey76"]
 
 [ext_resource type="Script" uid="uid://cd65dowovtx7i" path="res://scripts/juggler.gd" id="1_f65hk"]
 [ext_resource type="Texture2D" uid="uid://c6x5ci6lpx7rx" path="res://assets/Placeholders/juggler_placeholder.png" id="2_2a1ne"]
@@ -18,7 +18,13 @@ animations = [{
 radius = 22.0
 height = 62.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qtckm"]
+radius = 23.0
+height = 66.0
+
 [node name="juggler_body" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_f65hk")
 
 [node name="juggler_sprite" type="AnimatedSprite2D" parent="."]
@@ -29,5 +35,9 @@ sprite_frames = SubResource("SpriteFrames_qtckm")
 [node name="juggler_detection_shape" type="CollisionShape2D" parent="juggler_detection_area"]
 position = Vector2(-2, 0)
 shape = SubResource("CapsuleShape2D_2a1ne")
+
+[node name="juggler_collision" type="CollisionShape2D" parent="." groups=["juggler"]]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_qtckm")
 
 [connection signal="body_entered" from="juggler_detection_area" to="." method="_on_juggler_detection_area_body_entered"]
