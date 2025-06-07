@@ -31,7 +31,6 @@ texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(266, 361)
-scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(564, 400)
