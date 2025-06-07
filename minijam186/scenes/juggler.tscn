@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfdgabkuqey76"]
+[gd_scene load_steps=7 format=3 uid="uid://cfdgabkuqey76"]
 
 [ext_resource type="Script" uid="uid://cd65dowovtx7i" path="res://scripts/juggler.gd" id="1_f65hk"]
-[ext_resource type="Texture2D" uid="uid://c6x5ci6lpx7rx" path="res://assets/Placeholders/juggler_placeholder.png" id="2_2a1ne"]
+[ext_resource type="Texture2D" uid="uid://bpbetpksk7nko" path="res://assets/animations/Jongleuse-1.png" id="2_qtckm"]
+[ext_resource type="Texture2D" uid="uid://bq147ljwayncb" path="res://assets/animations/Jongleuse-2.png" id="3_qx0cp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtckm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2a1ne")
+"texture": ExtResource("2_qtckm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qx0cp")
 }],
 "loop": true,
 "name": &"default",
@@ -28,6 +32,8 @@ collision_mask = 2
 script = ExtResource("1_f65hk")
 
 [node name="juggler_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -51)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_qtckm")
 
 [node name="juggler_detection_area" type="Area2D" parent="."]
