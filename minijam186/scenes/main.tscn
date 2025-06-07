@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=14 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cbf2iy84v21yy" path="res://scenes/ball.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="5_tefeu"]
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
+[ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -19,19 +21,10 @@ size = Vector2(179, 537)
 [node name="main" type="Node2D"]
 script = ExtResource("1_o5qli")
 
-[node name="backgrounds_placeholder" type="ColorRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 648.0
-color = Color(0.593134, 0.593134, 0.593134, 1)
-metadata/_edit_lock_ = true
-
-[node name="ColorRect" type="ColorRect" parent="backgrounds_placeholder"]
-layout_mode = 0
-offset_left = 197.0
-offset_top = 110.0
-offset_right = 953.0
-offset_bottom = 424.0
-color = Color(0.309804, 0.678431, 1, 1)
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324)
+scale = Vector2(0.53287, 0.4)
+texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(266, 361)
@@ -58,21 +51,7 @@ collision_mask = 3
 position = Vector2(1046.5, 333)
 shape = SubResource("RectangleShape2D_tbgi4")
 
-[node name="public_placeholder" type="ColorRect" parent="."]
-offset_left = 186.0
-offset_top = 447.0
-offset_right = 955.0
-offset_bottom = 610.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="public_placeholder"]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 66.0
-offset_right = 644.0
-offset_bottom = 106.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 20
-text = "Ici y'aura le public"
+[node name="Node2D" parent="." instance=ExtResource("6_ya4ey")]
 
 [node name="public_bubble_1" type="TextureRect" parent="."]
 offset_top = 477.0
