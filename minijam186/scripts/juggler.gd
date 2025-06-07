@@ -7,8 +7,8 @@ var move_speed = 1
 func _process(delta: float) -> void:
 	pass
 	
-	
-
+func stop():
+	self.velocity = Vector2(0,0)	
 
 func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 	ball_caught.emit(body)

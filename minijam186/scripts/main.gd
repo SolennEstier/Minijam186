@@ -1,10 +1,11 @@
 extends Node2D
 @onready var player_body: CharacterBody2D = $player_body
 @onready var ball: RigidBody2D = $Ball
+@onready var juggler_body: CharacterBody2D = $juggler_body
+
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
 @onready var active_ball = ball
-
 
 func _ready():
 	start_ball_position = ball.position
@@ -13,6 +14,7 @@ func _ready():
 func _on_juggler_body_ball_caught(body) -> void:
 	print('attrapé !')
 	body.queue_free()
+	juggler_body.stop()
 	# Lancer animation de bravo + son de bravo
 	# Spawn a new ball
 	var new_ball = ball_scene.instantiate()
