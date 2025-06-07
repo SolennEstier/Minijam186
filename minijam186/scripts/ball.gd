@@ -1,14 +1,11 @@
 extends RigidBody2D
 
 
-var force = 500.0
-
-
 
 func _ready() -> void:
 	gravity_scale = 0
 
-func throw(angle: float):
+func throw(angle: float, force):
 	gravity_scale = 1
 	
 	var coeff_speed_ver = tan(angle/180*3.14)

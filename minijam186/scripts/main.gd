@@ -6,6 +6,7 @@ extends Node2D
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
+
 @onready var active_ball = ball
 @onready var public_bubble_1: TextureRect = $public_bubble_1
 
@@ -37,8 +38,8 @@ func ball_missed(body):
 	active_ball = new_ball
 
 
-func _on_player_body_throw_ball(angle, impact_point) -> void:
-	active_ball.throw(angle)
+func _on_player_body_throw_ball(angle, impact_point, force) -> void:
+	active_ball.throw(angle, force)
 	juggler_body.move_towards_ball(impact_point)
 
 
