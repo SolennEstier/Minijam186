@@ -64,6 +64,7 @@ offset_bottom = 691.0
 theme = ExtResource("6_o6xl0")
 texture = ExtResource("5_tefeu")
 script = ExtResource("7_ya4ey")
+metadata/_edit_use_anchors_ = true
 
 [node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_1"]
 layout_mode = 0
@@ -73,6 +74,7 @@ offset_right = 229.0
 offset_bottom = 120.0
 theme = ExtResource("6_o6xl0")
 text = "This is so great !"
+metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_1_timer" type="Timer" parent="."]
 wait_time = 2.5
