@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvdra1l0m5w65"]
+[gd_scene load_steps=6 format=3 uid="uid://bvdra1l0m5w65"]
 
 [ext_resource type="Texture2D" uid="uid://baxwk3kg407nv" path="res://assets/Placeholders/player_placeholder.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bct0srgw87c1t" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://dtvy1qkkble4r" path="res://scenes/arrow.tscn" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://vd1k56472g3j" path="res://assets/Placeholders/dashed_line_test.png" id="4_dqkch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -27,3 +28,5 @@ position = Vector2(19, -19)
 
 [node name="Trajectory" type="Line2D" parent="."]
 width = 2.0
+default_color = Color(1, 1, 1, 0)
+texture = ExtResource("4_dqkch")

@@ -7,13 +7,9 @@ extends CharacterBody2D
 signal throw_ball
 
 var angle_move_speed = 2
-
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var world_boundary_y = 42
-
 var force = 600
-
 
 
 func _process(delta: float) -> void:
@@ -23,12 +19,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("right"):
 		if arrow.rotation_degrees < 0 :
 			arrow.rotation_degrees += angle_move_speed
-	if Input.is_action_just_pressed("throw"):
-		throw_ball.emit(arrow.rotation_degrees)
 		
 	#updating trajectory
 	var parabola_coeffs = determine_parabola(arrow.rotation_degrees)
-	create_interpolation_points(parabola_coeffs,100)
+	var impact_points = calculate_impact_points(parabola_coeffs)
+	create_interpolation_points(parabola_coeffs,100, impact_points)
+	
+	if Input.is_action_just_pressed("throw"):
+		throw_ball.emit(arrow.rotation_degrees,impact_points[0])
+		
 	#draw trajectory
 	queue_redraw()
 	
@@ -46,9 +45,19 @@ func determine_parabola(angle):
 	var parabola_coeffs = [a,b,c]
 	return parabola_coeffs
 	
+func calculate_impact_points(parabola_coeffs):
+	var a = parabola_coeffs[0]
+	var b = parabola_coeffs[1]
+	var c = parabola_coeffs[2]
+
+	var impact_point_y = world_boundary_y
+	var impact_point_x = (-b+sqrt(b*b-4*a*(c-impact_point_y)))/(2*a)
+	
+	var impact_points = Vector2(impact_point_x,impact_point_y)
+	return impact_points
 	
 	
-func create_interpolation_points(parabola_coeffs, n):
+func create_interpolation_points(parabola_coeffs, n, impact_points):
 	var a = parabola_coeffs[0]
 	var b = parabola_coeffs[1]
 	var c = parabola_coeffs[2]
@@ -56,17 +65,14 @@ func create_interpolation_points(parabola_coeffs, n):
 	var p1 = arrow.position.x
 	var p2 = arrow.position.y
 	
-	var impact_point_y = world_boundary_y
-	var impact_point_x = (-b+sqrt(b*b-4*a*(c-impact_point_y)))/(2*a)
 
 	trajectory.clear_points()
 	
 	for i in range(n):
-		var x = p1 + i*(impact_point_x-p1)/n
-		var new_point = Vector2(x, a*x*x + b*x + c)
-		if new_point[1] < impact_point_y:
+		var x = p1 + i*(impact_points[0]-p1)/n
+		var new_point = Vector2(x, a*(x-p1)*(x-p1) + b*(x-p1) + c)
+		if new_point[1] < impact_points[1]:
 			trajectory.add_point(new_point)
-		
 	return 
 	
 
