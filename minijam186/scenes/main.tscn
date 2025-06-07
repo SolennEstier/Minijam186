@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=12 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="5_tefeu"]
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
+[ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -95,6 +97,12 @@ one_shot = true
 stream = ExtResource("7_o6xl0")
 volume_db = -10.341
 autoplay = true
+
+[node name="ballreceived" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_85g3d")
+
+[node name="ballmissed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_choun")
 
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
