@@ -1400,7 +1400,6 @@ content_margin_bottom = 0.0
 
 [resource]
 default_font = ExtResource("1_7xouh")
-default_font_size = 10
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
@@ -1422,7 +1421,7 @@ RichTextLabel/font_sizes/bold_font_size = 16
 RichTextLabel/font_sizes/bold_italics_font_size = 16
 RichTextLabel/font_sizes/italics_font_size = 16
 RichTextLabel/font_sizes/mono_font_size = 16
-RichTextLabel/font_sizes/normal_font_size = 25
+RichTextLabel/font_sizes/normal_font_size = 15
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_140tu")
 RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_q5l3a")
 RichTextLabel/fonts/italics_font = SubResource("FontVariation_5gvgu")

@@ -33,7 +33,8 @@ texture = ExtResource("10_choun")
 position = Vector2(266, 361)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(546, 388)
+position = Vector2(564, 400)
+scale = Vector2(0.4, 0.4)
 motion_mode = 1
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
@@ -60,6 +61,7 @@ shape = SubResource("RectangleShape2D_tbgi4")
 offset_top = 477.0
 offset_right = 274.0
 offset_bottom = 691.0
+theme = ExtResource("6_o6xl0")
 texture = ExtResource("5_tefeu")
 script = ExtResource("7_ya4ey")
 
