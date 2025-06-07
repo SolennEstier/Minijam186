@@ -10,16 +10,16 @@ extends CharacterBody2D
 signal throw_ball
 
 var angle_move_speed = 2
-var force = 800
+var force = 650
 
-var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 980.0
 var world_boundary_y = 42
 
 
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("left"):
-		if arrow.rotation_degrees > -70 :
+		if arrow.rotation_degrees > -45 :
 			arrow.rotation_degrees -= angle_move_speed
 	if Input.is_action_pressed("right"):
 		if arrow.rotation_degrees < 0 :
@@ -38,7 +38,8 @@ func _process(delta: float) -> void:
 	queue_redraw()
 	
 func determine_ball_velocity(angle,force):	
-	var ball_velocity = Vector2(1, tan(angle/180*3.14)).normalized()*force
+	var coeff_distance = (0.3-angle/45) *force
+	var ball_velocity = Vector2(1, tan(angle/180*3.1415926)).normalized()*coeff_distance
 	return ball_velocity
 	
 		
@@ -62,11 +63,10 @@ func calculate_impact_points(parabola_coeffs):
 	var a = parabola_coeffs[0]
 	var b = -2*a*p1+parabola_coeffs[1]
 	var c = a*p1*p1 + parabola_coeffs[2]- impact_point_y
-
 	var impact_point_x = (-b+sqrt(b*b-4*a*c))/(2*a)
+	
 	impact_point.position.x = impact_point_x
 	impact_point.position.y = impact_point_y
-	
 	var impact_points = Vector2(impact_point_x,impact_point_y)
 	return impact_points
 	
