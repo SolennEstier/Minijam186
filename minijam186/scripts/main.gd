@@ -36,7 +36,7 @@ func ball_missed(body):
 	active_ball = new_ball
 
 
-func _on_player_body_throw_ball(angle) -> void:
+func _on_player_body_throw_ball(angle, impact_point) -> void:
 	active_ball.throw(angle)
 
 
