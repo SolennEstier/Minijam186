@@ -30,7 +30,7 @@ scale = Vector2(0.53287, 0.4)
 texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(250, 366)
+position = Vector2(249, 366)
 scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
