@@ -30,7 +30,8 @@ scale = Vector2(0.53287, 0.4)
 texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(266, 361)
+position = Vector2(250, 366)
+scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(564, 400)
@@ -56,6 +57,7 @@ position = Vector2(1046.5, 333)
 shape = SubResource("RectangleShape2D_tbgi4")
 
 [node name="Node2D" parent="." instance=ExtResource("6_ya4ey")]
+position = Vector2(-6, 2)
 
 [node name="public_bubble_1" type="TextureRect" parent="."]
 offset_top = 477.0

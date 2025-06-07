@@ -46,8 +46,8 @@ func ball_missed(body):
 	ballmissed.play()
 
 
-func _on_player_body_throw_ball(angle, impact_point, force) -> void:
-	active_ball.throw(angle, force)
+func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
+	active_ball.throw(angle, force, velocity)
 	juggler_body.move_towards_ball(impact_point)
 
 
