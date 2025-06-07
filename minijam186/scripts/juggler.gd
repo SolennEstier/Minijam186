@@ -23,9 +23,9 @@ func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 	velocity = Vector2(0,0)
 
 func move_towards_ball(ball_final_position):
-
-	target_position = ball_final_position
-	var x_speed = target_position - position.x
+	target_position = ball_final_position + 200
+	print('le jongleur est en ', position.x, 'et larrivée en ', target_position )
+	var x_speed = target_position  - (position.x)
 	print(x_speed)
 	velocity = Vector2(x_speed, 0).normalized()*move_speed
 	print(velocity)
