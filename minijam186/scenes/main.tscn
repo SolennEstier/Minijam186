@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=30 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://dykjddfoqltnd" path="res://assets/animations/Bulles-1.png" id="11_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://bw8mkrvlnrk6m" path="res://assets/animations/Bulles-4.png" id="12_0ld40"]
+[ext_resource type="Texture2D" uid="uid://itdxiki3g1hm" path="res://assets/animations/Bulles-7.png" id="13_gqmmt"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c13mrf4qxk6dr" path="res://assets/animations/Obstacle.png" id="17_0ld40"]
@@ -183,6 +184,37 @@ scale = Vector2(1.01625, 1)
 theme = ExtResource("6_o6xl0")
 theme_override_font_sizes/normal_font_size = 0
 text = "I will never get tired of her !"
+metadata/_edit_use_anchors_ = true
+
+[node name="public_bubble_4" type="TextureRect" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_dp3eg")
+offset_left = 6.0
+offset_top = 218.0
+offset_right = 326.0
+offset_bottom = 538.0
+scale = Vector2(0.37592, 0.37592)
+theme = ExtResource("6_o6xl0")
+texture = ExtResource("13_gqmmt")
+flip_h = true
+script = ExtResource("7_ya4ey")
+metadata/_edit_use_anchors_ = true
+
+[node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0375
+anchor_top = -0.034375
+anchor_right = 0.15
+anchor_bottom = 0.334375
+offset_left = 76.0
+offset_top = 62.0
+offset_right = 229.0
+offset_bottom = 120.0
+scale = Vector2(1.01625, 1)
+theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 0
+text = "I could use this panel to stop her !"
 metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_1_timer" type="Timer" parent="."]

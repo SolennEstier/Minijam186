@@ -8,7 +8,6 @@ func _ready():
 	
 func _process(delta: float) -> void:
 	if dragging:
-		self.visible = true
 		position = get_global_mouse_position() - of
 	
 
