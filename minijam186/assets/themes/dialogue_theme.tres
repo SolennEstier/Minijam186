@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=18 format=4 uid="uid://ctkm3s4cu0nht"]
+[gd_resource type="Theme" load_steps=19 format=4 uid="uid://ctkm3s4cu0nht"]
 
 [ext_resource type="FontFile" uid="uid://dkex26d4d3axt" path="res://assets/fonts/dogbangy/Dogbangy.ttf" id="1_7xouh"]
+[ext_resource type="Texture2D" uid="uid://5vx3u3y8cncy" path="res://assets/animations/bouton_1.png" id="2_xsnil"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx3iq"]
 content_margin_left = 4.0
@@ -47,7 +48,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_811p6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhous"]
+texture = ExtResource("2_xsnil")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6smf6"]
 content_margin_left = 4.0
@@ -1481,7 +1483,7 @@ Button/fonts/font = ExtResource("1_7xouh")
 Button/styles/disabled = SubResource("StyleBoxFlat_tx3iq")
 Button/styles/focus = SubResource("StyleBoxFlat_xsnil")
 Button/styles/hover = SubResource("StyleBoxFlat_nhous")
-Button/styles/normal = SubResource("StyleBoxTexture_811p6")
+Button/styles/normal = SubResource("StyleBoxTexture_nhous")
 Button/styles/pressed = SubResource("StyleBoxFlat_6smf6")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)

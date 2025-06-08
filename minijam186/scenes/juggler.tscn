@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfdgabkuqey76"]
+[gd_scene load_steps=12 format=3 uid="uid://cfdgabkuqey76"]
 
 [ext_resource type="Script" uid="uid://cd65dowovtx7i" path="res://scripts/juggler.gd" id="1_f65hk"]
 [ext_resource type="Texture2D" uid="uid://bpbetpksk7nko" path="res://assets/animations/Jongleuse-1.png" id="2_qtckm"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cmyrkdh0tggds" path="res://assets/animations/Skateuse-1.png" id="4_0isnm"]
 [ext_resource type="Texture2D" uid="uid://qyms34h1cdom" path="res://assets/animations/Skateuse-2.png" id="5_h8yho"]
 [ext_resource type="PackedScene" uid="uid://c0csddnpkt6s7" path="res://scenes/ball_in.tscn" id="5_y2wo8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0isnm"]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtckm"]
 animations = [{
@@ -46,6 +49,7 @@ point_count = 24
 
 [node name="juggler_body" type="CharacterBody2D"]
 z_index = 5
+material = SubResource("CanvasItemMaterial_0isnm")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_f65hk")
