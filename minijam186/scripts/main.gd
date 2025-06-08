@@ -19,6 +19,7 @@ var current_level: int
 var fixed_moves = 2
 var ball_is_bouncing = 0
 var control_over_ball = 1
+var number_of_missed_balls = 0
 
 @export var dialogue: Dialogue
 
@@ -60,23 +61,26 @@ func _on_juggler_body_ball_caught(body) -> void:
 			tutorial_2.visible = true
 
 func ball_missed(body):
+	number_of_missed_balls +=1
 	body.queue_free()
 	print("Raté !")
 	## Remplacer ce qui suit par ce qui arrive quand le jongleur rate
-	var new_ball = ball_scene.instantiate()
-	add_child(new_ball)
-	control_over_ball = 1
-	ball_is_bouncing == 0
-	new_ball.position = start_ball_position
-	active_ball = new_ball
-	active_ball.body_entered.connect(self._on_ball_body_entered)
-	active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
-	active_ball.z_index =7
-	bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	ballmissed.play()
 	node_2d.choque_and_decu()
-	await get_tree().create_timer(2.0).timeout
-	get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
+	if number_of_missed_balls != 3:
+		var new_ball = ball_scene.instantiate()
+		add_child(new_ball)
+		control_over_ball = 1
+		ball_is_bouncing == 0
+		new_ball.position = start_ball_position
+		active_ball = new_ball
+		active_ball.body_entered.connect(self._on_ball_body_entered)
+		active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
+		active_ball.z_index =7
+		bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
+	else:
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
 
 
 func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
@@ -105,6 +109,7 @@ func _on_public_bubble_1_timer_timeout() -> void:
 func set_level(new_level):
 	juggler_body.set_level(new_level)
 	player_body.level = new_level
+	number_of_missed_balls = 0
 	if new_level != 0:
 		player_body.move_allowed = true
 
@@ -112,12 +117,10 @@ func set_level(new_level):
 func _on_ball_body_entered(body: Node) -> void:
 	if body.name == "bouncy_boundary" and ball_is_bouncing == 0:
 		bouncing_timer.start()
-		print("START")
 		ball_is_bouncing = 1
 
 	
 func _on_ball_has_bounced_enough(body) -> void:
-	print("ENOUGH")
 	bouncing_timer.stop()
 	ball_missed(body)
 	ball_is_bouncing = 0
@@ -125,4 +128,3 @@ func _on_ball_has_bounced_enough(body) -> void:
 
 func _on_juggler_body_request_bouncing_info(body) -> void:
 	send_bouncing_info.emit(ball_is_bouncing,body)
-	print("sending")
