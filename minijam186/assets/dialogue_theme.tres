@@ -36,7 +36,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsnil"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddhsp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhous"]
 texture = ExtResource("2_2ar8x")
@@ -1472,7 +1472,7 @@ Button/font_sizes/font_size = 33
 Button/fonts/font = ExtResource("1_ddhsp")
 Button/styles/disabled = SubResource("StyleBoxFlat_tx3iq")
 Button/styles/focus = SubResource("StyleBoxFlat_xsnil")
-Button/styles/hover = SubResource("StyleBoxEmpty_xsnil")
+Button/styles/hover = SubResource("StyleBoxFlat_ddhsp")
 Button/styles/normal = SubResource("StyleBoxTexture_nhous")
 Button/styles/pressed = SubResource("StyleBoxFlat_6smf6")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
