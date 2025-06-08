@@ -171,9 +171,10 @@ position = Vector2(1103, 223)
 shape = SubResource("RectangleShape2D_muem4")
 
 [node name="bouncing_timer" type="Timer" parent="bouncy_boundary"]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="test timer" type="TextEdit" parent="bouncy_boundary"]
+visible = false
 offset_left = 756.0
 offset_top = 91.0
 offset_right = 1006.0
