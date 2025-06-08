@@ -53,6 +53,7 @@ scale = Vector2(0.53287, 0.4)
 texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
+z_index = 5
 position = Vector2(249, 366)
 scale = Vector2(3, 3)
 
