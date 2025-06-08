@@ -68,20 +68,20 @@ color = Color(0.609339, 0, 0.0948253, 1)
 
 [node name="juggler_dialogue" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 483.0
-offset_top = 78.0
-offset_right = 1114.0
-offset_bottom = 230.0
+offset_left = 203.0
+offset_top = 68.0
+offset_right = 834.0
+offset_bottom = 220.0
 theme = ExtResource("1_5jhsw")
 theme_override_font_sizes/normal_font_size = 40
 text = "Hi ! Thank you so much for helping me with my show, you are so nice =)"
 
 [node name="player_dialogue" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 341.0
-offset_right = 762.0
-offset_bottom = 493.0
+offset_left = 401.0
+offset_top = 337.0
+offset_right = 1032.0
+offset_bottom = 489.0
 theme = ExtResource("1_5jhsw")
 theme_override_font_sizes/normal_font_size = 40
 text = "Haha, no problem !
@@ -99,7 +99,7 @@ text = "Start the show"
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="jongleuse_tete" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(238, 342)
+position = Vector2(923, 338)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_174j3")
 frame = 2
@@ -111,9 +111,10 @@ offset_bottom = 40.0
 texture = SubResource("ImageTexture_l0wth")
 
 [node name="mechant_tete" type="AnimatedSprite2D" parent="."]
-position = Vector2(905, 563)
+position = Vector2(257, 563)
 scale = Vector2(-0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_vsjvs")
 frame = 2
+flip_h = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
