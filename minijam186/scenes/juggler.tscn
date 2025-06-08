@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfdgabkuqey76"]
+[gd_scene load_steps=11 format=3 uid="uid://cfdgabkuqey76"]
 
 [ext_resource type="Script" uid="uid://cd65dowovtx7i" path="res://scripts/juggler.gd" id="1_f65hk"]
 [ext_resource type="Texture2D" uid="uid://bpbetpksk7nko" path="res://assets/animations/Jongleuse-1.png" id="2_qtckm"]
 [ext_resource type="Texture2D" uid="uid://bq147ljwayncb" path="res://assets/animations/Jongleuse-2.png" id="3_qx0cp"]
-[ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="4_qx0cp"]
+[ext_resource type="Texture2D" uid="uid://cmyrkdh0tggds" path="res://assets/animations/Skateuse-1.png" id="4_0isnm"]
+[ext_resource type="Texture2D" uid="uid://qyms34h1cdom" path="res://assets/animations/Skateuse-2.png" id="5_h8yho"]
 [ext_resource type="PackedScene" uid="uid://c0csddnpkt6s7" path="res://scenes/ball_in.tscn" id="5_y2wo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtckm"]
@@ -21,7 +22,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_qx0cp")
+"texture": ExtResource("4_0isnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h8yho")
 }],
 "loop": true,
 "name": &"skater_animation",
