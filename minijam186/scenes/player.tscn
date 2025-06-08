@@ -66,8 +66,8 @@ z_index = 2
 script = ExtResource("1_g2els")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -4.76837e-07)
-scale = Vector2(0.0739453, 0.0773633)
+position = Vector2(3, -14)
+scale = Vector2(0.13, 0.134)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"happy"
 
@@ -89,7 +89,7 @@ scale = Vector2(0.265625, 0.253906)
 texture = ExtResource("5_qlg0r")
 
 [node name="Anim_angry" type="AnimatedSprite2D" parent="."]
-position = Vector2(23, -7)
+position = Vector2(23, -60)
 scale = Vector2(0.104191, 0.120402)
 sprite_frames = SubResource("SpriteFrames_oprun")
 frame_progress = 0.696453

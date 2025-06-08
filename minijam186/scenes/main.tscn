@@ -3,23 +3,23 @@
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://dye62h1o6qfct" path="res://assets/dialogues.tres" id="2_choun"]
+[ext_resource type="Texture2D" uid="uid://o50dseqvnvd4" path="res://assets/animations/Fondbis.png" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bvdra1l0m5w65" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cbf2iy84v21yy" path="res://scenes/ball.tscn" id="4_jyhfs"]
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
+[ext_resource type="Script" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://8ojviuygu7xp" path="res://assets/animations/Bulles-3.png" id="9_muem4"]
-[ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://dykjddfoqltnd" path="res://assets/animations/Bulles-1.png" id="11_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://bw8mkrvlnrk6m" path="res://assets/animations/Bulles-4.png" id="12_0ld40"]
 [ext_resource type="Texture2D" uid="uid://itdxiki3g1hm" path="res://assets/animations/Bulles-7.png" id="13_gqmmt"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c13mrf4qxk6dr" path="res://assets/animations/Obstacle.png" id="17_0ld40"]
-[ext_resource type="PackedScene" uid="uid://6xjlx0qnq7ru" path="res://scenes/light_source.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" path="res://scenes/light_source.tscn" id="17_muem4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -69,11 +69,11 @@ dialogue = ExtResource("2_choun")
 [node name="Fond" type="Sprite2D" parent="."]
 position = Vector2(576.5, 324)
 scale = Vector2(0.53287, 0.4)
-texture = ExtResource("10_choun")
+texture = ExtResource("3_0ld40")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
 z_index = 7
-position = Vector2(249, 366)
+position = Vector2(260, 366)
 scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
@@ -237,23 +237,25 @@ stream = ExtResource("8_85g3d")
 stream = ExtResource("9_choun")
 
 [node name="Tutorial1" type="RichTextLabel" parent="."]
-offset_left = 322.0
-offset_top = 130.0
-offset_right = 833.0
+offset_left = 352.0
+offset_top = 35.0
+offset_right = 847.0
 offset_bottom = 170.0
 theme = ExtResource("6_o6xl0")
 theme_override_font_sizes/normal_font_size = 30
 text = "Use Space Bar to Throw Ball"
+horizontal_alignment = 1
 
 [node name="Tutorial2" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 242.0
-offset_top = 186.0
-offset_right = 967.0
+offset_left = 248.0
+offset_top = 79.0
+offset_right = 926.0
 offset_bottom = 226.0
 theme = ExtResource("6_o6xl0")
 theme_override_font_sizes/normal_font_size = 30
 text = "Move trajectory with up/down arrows"
+horizontal_alignment = 1
 
 [node name="Obstacle" type="StaticBody2D" parent="." groups=["obstacle"]]
 position = Vector2(114, 164)
@@ -315,7 +317,7 @@ offset_right = 1006.0
 offset_bottom = 179.0
 
 [node name="Light" parent="." instance=ExtResource("17_muem4")]
-position = Vector2(16, 5)
+position = Vector2(40, 1)
 
 [node name="rightparticule" type="CPUParticles2D" parent="."]
 position = Vector2(986, 163)

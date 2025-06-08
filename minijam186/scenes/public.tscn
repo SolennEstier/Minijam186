@@ -1,23 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6j3xb70lm2la"]
+[gd_scene load_steps=9 format=3 uid="uid://c6j3xb70lm2la"]
 
 [ext_resource type="Script" uid="uid://belq3bjw4kcl1" path="res://scripts/public.gd" id="1_ml6ga"]
-[ext_resource type="Texture2D" uid="uid://6slh3htab7og" path="res://assets/animations/Applause bis 1.png" id="2_ml6ga"]
+[ext_resource type="Texture2D" uid="uid://t5frob3vkobx" path="res://assets/animations/Gauche_Droitebis-1.png" id="2_5r131"]
 [ext_resource type="Texture2D" uid="uid://dk6gop1t6fbuy" path="res://assets/animations/Applause bis 2.png" id="3_75dnk"]
+[ext_resource type="Texture2D" uid="uid://bdrbbgu2l7ryk" path="res://assets/animations/Gauche_Droitebis-2.png" id="3_k708t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75dnk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ml6ga")
+"texture": ExtResource("2_5r131")
 }, {
+"duration": 1.0,
+"texture": ExtResource("3_k708t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.43
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_75dnk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ml6ga")
 }],
 "loop": false,
-"name": &"default",
+"name": &"jump",
 "speed": 0.5
 }]
 
@@ -100,6 +106,7 @@ script = ExtResource("1_ml6ga")
 position = Vector2(575, 324)
 scale = Vector2(0.534259, 0.4)
 sprite_frames = SubResource("SpriteFrames_75dnk")
+autoplay = "default"
 
 [node name="jump" type="AnimationPlayer" parent="."]
 libraries = {
