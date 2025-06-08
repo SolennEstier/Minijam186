@@ -202,14 +202,13 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Use Space Bar to Throw Ball"
 
 [node name="Tutorial2" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 309.0
+offset_left = 242.0
 offset_top = 186.0
-offset_right = 862.0
+offset_right = 967.0
 offset_bottom = 226.0
 theme = ExtResource("6_o6xl0")
 theme_override_font_sizes/normal_font_size = 30
-text = "Move trajectory with arrows"
+text = "Move trajectory with up/down arrows"
 
 [node name="Obstacle" type="StaticBody2D" parent="." groups=["obstacle"]]
 position = Vector2(114, 164)
