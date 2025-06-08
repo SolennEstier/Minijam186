@@ -2,6 +2,7 @@ extends StaticBody2D
 
 var dragging = false
 var of = Vector2(0,0)
+@onready var collapse: CPUParticles2D = $collapse
 
 func _ready():
 	self.visible = false 
@@ -17,3 +18,6 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+	
+func start_collapse():
+	collapse.emitting=true

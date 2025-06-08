@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=31 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -43,6 +43,10 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbj1t"]
 size = Vector2(99, 115.5)
+
+[sub_resource type="Curve" id="Curve_gqmmt"]
+_data = [Vector2(0, 0.483146), 0.0, 0.0, 0, 0, Vector2(0.346591, 1), 0.0, 0.0, 0, 0, Vector2(0.982955, 0.337079), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
 size = Vector2(1166, 52.5)
@@ -273,6 +277,22 @@ offset_top = 184.0
 offset_right = 46.0
 offset_bottom = 281.0
 
+[node name="collapse" type="CPUParticles2D" parent="Obstacle"]
+position = Vector2(0, 250)
+emitting = false
+amount = 12
+lifetime = 1.25
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 232.32
+initial_velocity_max = 232.32
+scale_amount_min = 31.3
+scale_amount_max = 41.41
+scale_amount_curve = SubResource("Curve_gqmmt")
+color = Color(0.7, 0, 0, 1)
+
 [node name="bouncy_boundary" type="StaticBody2D" parent="."]
 visibility_layer = 3
 position = Vector2(29, 2)
@@ -300,12 +320,12 @@ offset_bottom = 179.0
 position = Vector2(40, 1)
 
 [node name="rightparticule" type="CPUParticles2D" parent="."]
-position = Vector2(986, 163)
+position = Vector2(919, 87)
 emitting = false
 amount = 300
 one_shot = true
 explosiveness = 0.85
-direction = Vector2(-1, 1)
+direction = Vector2(-2, 1)
 spread = 75.91
 gravity = Vector2(0, 1)
 initial_velocity_min = 75.0
@@ -315,12 +335,12 @@ scale_amount_curve = SubResource("Curve_0ld40")
 color_ramp = SubResource("Gradient_gqmmt")
 
 [node name="rightparticule2" type="CPUParticles2D" parent="."]
-position = Vector2(201, 169)
+position = Vector2(249, 89)
 emitting = false
 amount = 300
 one_shot = true
 explosiveness = 0.85
-direction = Vector2(1, 1)
+direction = Vector2(3, 1)
 spread = 86.82
 gravity = Vector2(0, 1)
 initial_velocity_min = 75.0

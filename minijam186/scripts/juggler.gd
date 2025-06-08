@@ -66,7 +66,9 @@ func _on_main_send_bouncing_info(bouncing_info, body) -> void:
 	var ball_is_bouncing = bouncing_info
 	if ball_is_bouncing == 0 and body.is_in_group('obstacle'):
 		velocity = Vector2(0,0)
+		body.start_collapse()
 		body.position = Vector2(100,100)
+		
 	if ball_is_bouncing == 0 and body.is_in_group('ball'):
 		ball_caught.emit(body)
 		velocity = Vector2(0,0)
