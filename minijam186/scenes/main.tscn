@@ -180,9 +180,11 @@ offset_top = 91.0
 offset_right = 1006.0
 offset_bottom = 179.0
 
+[connection signal="send_bouncing_info" from="." to="juggler_body" method="_on_main_send_bouncing_info"]
 [connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]
 [connection signal="has_bounced_enough" from="Ball" to="." method="_on_ball_has_bounced_enough"]
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
+[connection signal="request_bouncing_info" from="juggler_body" to="." method="_on_juggler_body_request_bouncing_info"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]
 [connection signal="timeout" from="public_bubble_1_timer" to="." method="_on_public_bubble_1_timer_timeout"]

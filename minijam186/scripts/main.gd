@@ -11,6 +11,7 @@ extends Node2D
 
 @onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
 
+signal send_bouncing_info
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
@@ -118,3 +119,8 @@ func _on_ball_has_bounced_enough(body) -> void:
 	bouncing_timer.stop()
 	ball_missed(body)
 	ball_is_bouncing = 0
+
+
+func _on_juggler_body_request_bouncing_info(body) -> void:
+	send_bouncing_info.emit(ball_is_bouncing,body)
+	print("sending")
