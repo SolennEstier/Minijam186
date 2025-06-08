@@ -103,7 +103,7 @@ func ball_missed(body):
 		bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	else:
 		juggler_body.can_move = 0
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.2).timeout
 		print("le niveau actuel est ", current_level)
 		if current_level != 4:
 			get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
