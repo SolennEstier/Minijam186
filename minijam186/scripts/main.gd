@@ -89,8 +89,10 @@ func ball_missed(body):
 	else:
 		juggler_body.can_move = 0
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
-
+		if current_level != 5:
+			get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
+		if current_level == 5:
+			get_tree().change_scene_to_file("res://scenes/end_lvl0_screen.tscn")
 
 func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
 	if control_over_ball == 1:
