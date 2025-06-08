@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://dykjddfoqltnd" path="res://assets/animations/Bulles-1.png" id="11_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://bw8mkrvlnrk6m" path="res://assets/animations/Bulles-4.png" id="12_0ld40"]
-[ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="14_a8y0u"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://c13mrf4qxk6dr" path="res://assets/animations/Obstacle.png" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6xjlx0qnq7ru" path="res://scenes/light_source.tscn" id="17_muem4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
@@ -33,7 +33,7 @@ light_mode = 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_a8y0u")
+"texture": ExtResource("17_0ld40")
 }],
 "loop": true,
 "name": &"default",
@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbj1t"]
-size = Vector2(86, 97)
+size = Vector2(99, 115.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
 size = Vector2(1166, 52.5)
@@ -216,12 +216,12 @@ position = Vector2(114, 164)
 script = ExtResource("14_jkv2x")
 
 [node name="Obstacle_sprite" type="AnimatedSprite2D" parent="Obstacle"]
-position = Vector2(-21.5, -22)
-scale = Vector2(0.664063, 0.734375)
+position = Vector2(-2, 232)
+scale = Vector2(0.175112, 0.182875)
 sprite_frames = SubResource("SpriteFrames_jkv2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(-21, -21.5)
+position = Vector2(3.5, 236.25)
 shape = SubResource("RectangleShape2D_jbj1t")
 
 [node name="Button" type="Button" parent="Obstacle"]
