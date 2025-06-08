@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jj7gd"]
-radius = 16.0
+radius = 12.0
 
 [node name="Ball" type="RigidBody2D" groups=["ball"]]
 physics_material_override = SubResource("PhysicsMaterial_jj7gd")
@@ -44,7 +44,7 @@ script = ExtResource("1_7s4qf")
 
 [node name="Ball_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 2)
-scale = Vector2(0.546875, 0.53575)
+scale = Vector2(0.5, 0.509)
 sprite_frames = SubResource("SpriteFrames_f7cbr")
 frame_progress = 0.377784
 

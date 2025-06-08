@@ -74,7 +74,7 @@ animation = &"happy"
 [node name="Arrow" parent="." instance=ExtResource("3_qhqgy")]
 visible = false
 z_index = 1
-position = Vector2(58, -1)
+position = Vector2(33, 12)
 
 [node name="Trajectory" type="Line2D" parent="."]
 z_index = 6

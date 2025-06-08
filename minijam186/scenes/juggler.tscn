@@ -36,10 +36,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtckm"]
-size = Vector2(460.5, 242)
+size = Vector2(474.5, 299)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx0cp"]
-size = Vector2(473.5, 245)
+size = Vector2(482.5, 303.5)
 
 [sub_resource type="Curve2D" id="Curve2D_0isnm"]
 _data = {
@@ -64,11 +64,11 @@ frame_progress = 0.346008
 [node name="juggler_detection_area" type="Area2D" parent="."]
 
 [node name="juggler_detection_shape" type="CollisionShape2D" parent="juggler_detection_area"]
-position = Vector2(25.25, -237)
+position = Vector2(18.25, -208.5)
 shape = SubResource("RectangleShape2D_qtckm")
 
 [node name="juggler_collision" type="CollisionShape2D" parent="." groups=["juggler"]]
-position = Vector2(26.75, -235.5)
+position = Vector2(22.25, -206.25)
 shape = SubResource("RectangleShape2D_qx0cp")
 
 [node name="all_ball" type="Path2D" parent="."]
