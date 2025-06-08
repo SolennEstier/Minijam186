@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://kwnc8a6xdgnl"]
 
 [ext_resource type="Script" uid="uid://c6rlxobky1s6e" path="res://scripts/intro_screen.gd" id="1_iqyf7"]
-[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="2_p23fs"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="2_p23fs"]
 
 [node name="IntroScreen" type="Control"]
 layout_mode = 3

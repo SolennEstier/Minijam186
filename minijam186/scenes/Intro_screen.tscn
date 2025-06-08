@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://6a7hgryr1g5q"]
 
-[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="1_5jhsw"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="1_5jhsw"]
 [ext_resource type="Script" uid="uid://c6rlxobky1s6e" path="res://scripts/intro_screen.gd" id="1_kov8j"]
 [ext_resource type="Resource" uid="uid://dye62h1o6qfct" path="res://assets/dialogues.tres" id="2_k3ydu"]
 [ext_resource type="Texture2D" uid="uid://c0pygm525nud3" path="res://assets/animations/Tete_jongleuse_1.png" id="4_kxt6i"]

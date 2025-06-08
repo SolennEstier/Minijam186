@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxfo1sd8uiq2x" path="res://scripts/start_screen.gd" id="1_tx5wa"]
 [ext_resource type="Texture2D" uid="uid://dh2i7qpak7yj5" path="res://assets/Screens/Start.png" id="2_o7i0r"]
-[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="3_he1sj"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="3_he1sj"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
