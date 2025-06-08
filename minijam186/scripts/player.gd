@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var impact_point: Sprite2D = $ImpactPoint
 
+@onready var anim_angry: AnimatedSprite2D = $Anim_angry
 
 
 signal throw_ball
@@ -22,6 +23,7 @@ var world_boundary_y = 30
   
 func _ready():
 	player_sprite.frame = 0
+	anim_angry.frame = 0
 
 
 func _process(delta: float) -> void:
@@ -124,3 +126,17 @@ func _draw():
 	
 	
 	#attention à scale la gravité
+
+
+func _on_main_juggler_caught_it() -> void:
+	anim_angry.play()
+	await get_tree().create_timer(1.5).timeout
+	anim_angry.stop()
+	anim_angry.frame = 0
+	
+func test():
+	player_sprite.play("happy")
+	await get_tree().create_timer(1).timeout
+	player_sprite.play("default")
+	
+	

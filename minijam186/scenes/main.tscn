@@ -236,10 +236,10 @@ shape = SubResource("RectangleShape2D_jbj1t")
 
 [node name="Button" type="Button" parent="Obstacle"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -65.0
-offset_top = -71.0
-offset_right = 21.0
-offset_bottom = 26.0
+offset_left = -40.0
+offset_top = 184.0
+offset_right = 46.0
+offset_bottom = 281.0
 
 [node name="bouncy_boundary" type="StaticBody2D" parent="."]
 visibility_layer = 3
@@ -297,6 +297,7 @@ scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_0ld40")
 color_ramp = SubResource("Gradient_gqmmt")
 
+[connection signal="juggler_caught_it" from="." to="player_body" method="_on_main_juggler_caught_it"]
 [connection signal="send_bouncing_info" from="." to="juggler_body" method="_on_main_send_bouncing_info"]
 [connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]
 [connection signal="has_bounced_enough" from="Ball" to="." method="_on_ball_has_bounced_enough"]

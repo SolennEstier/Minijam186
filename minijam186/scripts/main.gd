@@ -17,6 +17,7 @@ extends Node2D
 @onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
 
 signal send_bouncing_info
+signal juggler_caught_it
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
@@ -45,6 +46,7 @@ func _ready():
 
 func _on_juggler_body_ball_caught(body) -> void:
 	print('attrapé !')
+	juggler_caught_it.emit()
 	body.queue_free()
 	juggler_body.stop()
 	# Lancer animation de bravo + son de bravo
@@ -87,8 +89,11 @@ func ball_missed(body):
 	else:
 		juggler_body.can_move = 0
 		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
-
+		print("le niveau actuel est ", current_level)
+		if current_level != 4:
+			get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
+		if current_level == 4:
+			get_tree().change_scene_to_file("res://scenes/end_lvl0_screen.tscn")
 
 func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
 	if control_over_ball == 1:

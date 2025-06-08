@@ -13,7 +13,7 @@ var can_move = 1
 
 func set_level(new_level):
 	level = new_level
-	if level == 3:
+	if level == 3 or level == 4:
 		juggler_sprite.animation = "skater_animation"
 
 func _physics_process(delta: float) -> void:
@@ -54,6 +54,10 @@ func move_towards_ball(ball_final_position):
 		# TODO : implémenter ici le déplacement en skate joliment
 		#position.x = target_position
 		move_speed = 500
+	if level == 4:
+		# TODO : implémenter ici le déplacement en skate joliment
+		#position.x = target_position
+		move_speed = 1500
 	velocity = Vector2(x_speed, 0).normalized()*move_speed
 	print(velocity)
 
