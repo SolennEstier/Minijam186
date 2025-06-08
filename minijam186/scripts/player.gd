@@ -22,10 +22,10 @@ var world_boundary_y = 30
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("up") and move_allowed == true:
+	if Input.is_action_pressed("ui_up") and move_allowed == true:
 		if arrow.rotation_degrees > -45 :
 			arrow.rotation_degrees -= angle_move_speed
-	if Input.is_action_pressed("down") and move_allowed == true:
+	if Input.is_action_pressed("ui_down") and move_allowed == true:
 		if arrow.rotation_degrees < 0 :
 			arrow.rotation_degrees += angle_move_speed
 		
