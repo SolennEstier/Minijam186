@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
-[ext_resource type="Script" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
+[ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://8ojviuygu7xp" path="res://assets/animations/Bulles-3.png" id="9_muem4"]
@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c13mrf4qxk6dr" path="res://assets/animations/Obstacle.png" id="17_0ld40"]
-[ext_resource type="PackedScene" path="res://scenes/light_source.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://6xjlx0qnq7ru" path="res://scenes/light_source.tscn" id="17_muem4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -320,12 +320,12 @@ offset_bottom = 179.0
 position = Vector2(40, 1)
 
 [node name="rightparticule" type="CPUParticles2D" parent="."]
-position = Vector2(986, 163)
+position = Vector2(919, 87)
 emitting = false
 amount = 300
 one_shot = true
 explosiveness = 0.85
-direction = Vector2(-1, 1)
+direction = Vector2(-2, 1)
 spread = 75.91
 gravity = Vector2(0, 1)
 initial_velocity_min = 75.0
@@ -335,12 +335,12 @@ scale_amount_curve = SubResource("Curve_0ld40")
 color_ramp = SubResource("Gradient_gqmmt")
 
 [node name="rightparticule2" type="CPUParticles2D" parent="."]
-position = Vector2(201, 169)
+position = Vector2(249, 89)
 emitting = false
 amount = 300
 one_shot = true
 explosiveness = 0.85
-direction = Vector2(1, 1)
+direction = Vector2(3, 1)
 spread = 86.82
 gravity = Vector2(0, 1)
 initial_velocity_min = 75.0
