@@ -89,7 +89,7 @@ scale = Vector2(0.265625, 0.253906)
 texture = ExtResource("5_qlg0r")
 
 [node name="Anim_angry" type="AnimatedSprite2D" parent="."]
-position = Vector2(23, -7)
+position = Vector2(23, -60)
 scale = Vector2(0.104191, 0.120402)
 sprite_frames = SubResource("SpriteFrames_oprun")
 frame_progress = 0.696453
