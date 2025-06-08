@@ -21,6 +21,10 @@ func _physics_process(delta: float) -> void:
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			print("I collided with ", collision.get_collider().name)
+		if velocity.x < 0 and position.x < target_position :
+			velocity = Vector2(0,0)
+		if velocity.x > 0 and position.x > target_position :
+			velocity = Vector2(0,0)
 	
 	
 func stop():
@@ -41,15 +45,15 @@ func move_towards_ball(ball_final_position):
 	target_position = ball_final_position+200
 	print('le jongleur est en ', position.x, 'et larrivée en ', target_position )
 	var x_speed = target_position  - (position.x)
-	print(x_speed)
+	print(x_speed, level)
 	if level == 0:
 		move_speed = 0
 	if level == 2 :
 		move_speed = 120
 	if level == 3:
 		# TODO : implémenter ici le déplacement en skate joliment
-		position.x = target_position
-		move_speed = 0
+		#position.x = target_position
+		move_speed = 300
 	velocity = Vector2(x_speed, 0).normalized()*move_speed
 	print(velocity)
 
