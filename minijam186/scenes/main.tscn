@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
-[ext_resource type="Script" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
+[ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://8ojviuygu7xp" path="res://assets/animations/Bulles-3.png" id="9_muem4"]
@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c13mrf4qxk6dr" path="res://assets/animations/Obstacle.png" id="17_0ld40"]
-[ext_resource type="PackedScene" path="res://scenes/light_source.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://6xjlx0qnq7ru" path="res://scenes/light_source.tscn" id="17_muem4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
