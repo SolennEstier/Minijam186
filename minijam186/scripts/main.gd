@@ -11,6 +11,8 @@ extends Node2D
 @onready var public_bubble_2: TextureRect = $public_bubble_2
 @onready var public_bubble_3: TextureRect = $public_bubble_3
 @onready var public_bubble_1: TextureRect = $public_bubble_1
+@onready var rightparticule: CPUParticles2D = $rightparticule
+@onready var rightparticule_2: CPUParticles2D = $rightparticule2
 
 @onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
 
@@ -101,6 +103,8 @@ func _on_down_boundary_body_entered(body: Node2D) -> void:
 	
 	
 func public_congratulations():
+	rightparticule.emitting=true
+	rightparticule_2.emitting=true
 	var chosen_bubble = [public_bubble_1, public_bubble_2, public_bubble_3].pick_random()
 	chosen_bubble.visible = true
 	ballreceived.play()
