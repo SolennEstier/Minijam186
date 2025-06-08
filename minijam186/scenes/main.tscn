@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=29 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -48,6 +48,14 @@ size = Vector2(1166, 52.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muem4"]
 size = Vector2(187.5, 477)
+
+[sub_resource type="Curve" id="Curve_0ld40"]
+_data = [Vector2(0, 0.348315), 0.0, 0.0, 0, 0, Vector2(0.267045, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.202247), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_gqmmt"]
+offsets = PackedFloat32Array(0, 0.166667, 0.78, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.9, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -256,6 +264,36 @@ offset_bottom = 179.0
 
 [node name="Light" parent="." instance=ExtResource("17_muem4")]
 position = Vector2(16, 5)
+
+[node name="rightparticule" type="CPUParticles2D" parent="."]
+position = Vector2(986, 163)
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 0.85
+direction = Vector2(-1, 1)
+spread = 75.91
+gravity = Vector2(0, 1)
+initial_velocity_min = 75.0
+initial_velocity_max = 181.81
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_0ld40")
+color_ramp = SubResource("Gradient_gqmmt")
+
+[node name="rightparticule2" type="CPUParticles2D" parent="."]
+position = Vector2(201, 169)
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 0.85
+direction = Vector2(1, 1)
+spread = 86.82
+gravity = Vector2(0, 1)
+initial_velocity_min = 75.0
+initial_velocity_max = 181.81
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_0ld40")
+color_ramp = SubResource("Gradient_gqmmt")
 
 [connection signal="send_bouncing_info" from="." to="juggler_body" method="_on_main_send_bouncing_info"]
 [connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]
