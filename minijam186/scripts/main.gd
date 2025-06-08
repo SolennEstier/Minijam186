@@ -6,6 +6,7 @@ extends Node2D
 @onready var ballreceived: AudioStreamPlayer = $ballreceived
 @onready var ballmissed: AudioStreamPlayer = $ballmissed
 @onready var node_2d: Node2D = $Node2D
+@onready var tutorial_1: RichTextLabel = $Tutorial1
 @onready var tutorial_2: RichTextLabel = $Tutorial2
 @onready var bouncing_timer: Timer = $bouncy_boundary/bouncing_timer
 @onready var public_bubble_2: TextureRect = $public_bubble_2
@@ -13,6 +14,9 @@ extends Node2D
 @onready var public_bubble_1: TextureRect = $public_bubble_1
 @onready var rightparticule: CPUParticles2D = $rightparticule
 @onready var rightparticule_2: CPUParticles2D = $rightparticule2
+@onready var obstacle: StaticBody2D = $Obstacle
+@onready var public_bubble_4: TextureRect = $public_bubble_4
+@onready var light: Node2D = $Light
 
 @onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
 
@@ -27,6 +31,7 @@ var fixed_moves = 2
 var ball_is_bouncing = 0
 var control_over_ball = 1
 var number_of_missed_balls = 0
+var number_of_caught_balls: int
 
 @export var dialogue: Dialogue
 
@@ -41,11 +46,20 @@ func _ready():
 	public_bubble_3.visible = false
 	if current_level > 0 :
 		tutorial_2.visible = true
+	if current_level > 1 :
+		tutorial_1.visible = false
+		tutorial_2.visible = false
 	elif current_level == 0 :
 		player_body.move_allowed = false
+	if current_level == 4 :
+		obstacle.visible = true
+	number_of_caught_balls = 0
 
 
 func _on_juggler_body_ball_caught(body) -> void:
+	number_of_caught_balls += 1
+	if current_level == 4 and number_of_caught_balls == 2:
+		public_bubble_4.visible = true
 	print('attrapé !')
 	juggler_caught_it.emit()
 	body.queue_free()
