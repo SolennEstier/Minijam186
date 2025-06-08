@@ -42,7 +42,7 @@ func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 
 func move_towards_ball(ball_final_position):
 	print(self.global_position)
-	target_position = ball_final_position+200
+	target_position = ball_final_position+50
 	print('le jongleur est en ', position.x, 'et larrivée en ', target_position )
 	var x_speed = target_position  - (position.x)
 	print(x_speed, level)
