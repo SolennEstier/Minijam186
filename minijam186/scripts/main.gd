@@ -79,6 +79,7 @@ func ball_missed(body):
 		active_ball.z_index =7
 		bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	else:
+		juggler_body.can_move = 0
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://scenes/Intro_screen.tscn")
 
@@ -110,6 +111,7 @@ func set_level(new_level):
 	juggler_body.set_level(new_level)
 	player_body.level = new_level
 	number_of_missed_balls = 0
+	juggler_body.can_move = 1
 	if new_level != 0:
 		player_body.move_allowed = true
 

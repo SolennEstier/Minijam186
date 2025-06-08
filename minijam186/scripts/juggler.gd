@@ -9,7 +9,7 @@ var move_speed = 30
 var level: int
 var ball_is_bouncing = 0
 var target_position = 0
-
+var can_move = 1
 
 func set_level(new_level):
 	level = new_level
@@ -17,9 +17,10 @@ func set_level(new_level):
 		juggler_sprite.animation = "skater_animation"
 
 func _physics_process(delta: float) -> void:
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		print("I collided with ", collision.get_collider().name)
+	if can_move == 1:
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			print("I collided with ", collision.get_collider().name)
 	
 	
 func stop():
@@ -36,7 +37,8 @@ func _on_juggler_detection_area_body_entered(body: Node2D) -> void:
 
 
 func move_towards_ball(ball_final_position):
-	target_position = ball_final_position + 200
+	print(self.global_position)
+	target_position = ball_final_position+200
 	print('le jongleur est en ', position.x, 'et larrivée en ', target_position )
 	var x_speed = target_position  - (position.x)
 	print(x_speed)
