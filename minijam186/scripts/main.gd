@@ -6,6 +6,7 @@ extends Node2D
 @onready var ballreceived: AudioStreamPlayer = $ballreceived
 @onready var ballmissed: AudioStreamPlayer = $ballmissed
 @onready var node_2d: Node2D = $Node2D
+@onready var tutorial_1: RichTextLabel = $Tutorial1
 @onready var tutorial_2: RichTextLabel = $Tutorial2
 @onready var bouncing_timer: Timer = $bouncy_boundary/bouncing_timer
 @onready var public_bubble_2: TextureRect = $public_bubble_2
@@ -41,6 +42,9 @@ func _ready():
 	public_bubble_3.visible = false
 	if current_level > 0 :
 		tutorial_2.visible = true
+	if current_level > 1 :
+		tutorial_1.visible = false
+		tutorial_2.visible = false
 	elif current_level == 0 :
 		player_body.move_allowed = false
 
