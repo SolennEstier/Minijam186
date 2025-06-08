@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=24 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="14_a8y0u"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://6xjlx0qnq7ru" path="res://scenes/light_source.tscn" id="17_muem4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -53,7 +54,7 @@ scale = Vector2(0.53287, 0.4)
 texture = ExtResource("10_choun")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
-z_index = 5
+z_index = 7
 position = Vector2(249, 366)
 scale = Vector2(3, 3)
 
@@ -180,6 +181,8 @@ offset_left = 756.0
 offset_top = 91.0
 offset_right = 1006.0
 offset_bottom = 179.0
+
+[node name="Light" parent="." instance=ExtResource("17_muem4")]
 
 [connection signal="send_bouncing_info" from="." to="juggler_body" method="_on_main_send_bouncing_info"]
 [connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]

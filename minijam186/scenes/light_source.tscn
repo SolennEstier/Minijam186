@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://6xjlx0qnq7ru"]
+
+[ext_resource type="Texture2D" uid="uid://bn66f16st1p1c" path="res://assets/Placeholders/Placeholder_ball.jpg" id="1_sj0jd"]
+
+[sub_resource type="Gradient" id="Gradient_7ujwk"]
+offsets = PackedFloat32Array(0.556962, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_akm2q"]
+gradient = SubResource("Gradient_7ujwk")
+fill = 1
+fill_from = Vector2(0.511811, 0.444882)
+fill_to = Vector2(1, 0.177165)
+
+[node name="Light" type="Node2D"]
+
+[node name="Background test" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(578, 330)
+scale = Vector2(14.7147, 8.1788)
+texture = ExtResource("1_sj0jd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(579, 171)
+rotation = -6.28319
+scale = Vector2(18.7781, 11.867)
+texture = SubResource("GradientTexture2D_akm2q")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.376658, 0.376658, 0.376658, 1)

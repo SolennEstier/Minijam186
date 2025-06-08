@@ -50,6 +50,7 @@ func _on_juggler_body_ball_caught(body) -> void:
 	active_ball = new_ball
 	active_ball.body_entered.connect(self._on_ball_body_entered)
 	active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
+	active_ball.z_index =7
 	bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	public_congratulations()
 	if current_level == 0:
@@ -70,6 +71,7 @@ func ball_missed(body):
 	active_ball = new_ball
 	active_ball.body_entered.connect(self._on_ball_body_entered)
 	active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
+	active_ball.z_index =7
 	bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	ballmissed.play()
 	node_2d.choque_and_decu()
