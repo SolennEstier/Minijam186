@@ -77,7 +77,7 @@ z_index = 1
 position = Vector2(33, 12)
 
 [node name="Trajectory" type="Line2D" parent="."]
-z_index = -1
+z_index = 6
 width = 4.0
 default_color = Color(1, 1, 1, 0.976471)
 texture = ExtResource("6_fjrip")

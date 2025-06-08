@@ -82,7 +82,7 @@ position = Vector2(212, 357)
 
 [node name="down_boundary" type="Area2D" parent="."]
 z_index = 1
-position = Vector2(-8, 29)
+position = Vector2(-8, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down_boundary"]
 position = Vector2(574, 434)
@@ -279,7 +279,7 @@ position = Vector2(29, 2)
 script = ExtResource("16_jbj1t")
 
 [node name="down" type="CollisionShape2D" parent="bouncy_boundary"]
-position = Vector2(545, 448.25)
+position = Vector2(538, 484)
 shape = SubResource("RectangleShape2D_jkv2x")
 
 [node name="right" type="CollisionShape2D" parent="bouncy_boundary"]
