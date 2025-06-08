@@ -22,6 +22,7 @@ var world_boundary_y = 30
 
   
 func _ready():
+	player_sprite.play("default")
 	player_sprite.frame = 0
 	anim_angry.frame = 0
 
@@ -134,9 +135,9 @@ func _on_main_juggler_caught_it() -> void:
 	anim_angry.stop()
 	anim_angry.frame = 0
 	
-func test():
+	
+
+func _on_main_juggler_failed() -> void:
 	player_sprite.play("happy")
 	await get_tree().create_timer(1).timeout
 	player_sprite.play("default")
-	
-	
