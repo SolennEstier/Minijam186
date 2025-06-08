@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://kwnc8a6xdgnl"]
+[gd_scene load_steps=7 format=3 uid="uid://sswnctyuebwd"]
 
+[ext_resource type="Texture2D" uid="uid://2fur4usfwsao" path="res://assets/animations/victoire bis-1.png" id="2_egps7"]
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="2_p23fs"]
-[ext_resource type="Texture2D" uid="uid://dl3gnpuv4oo8i" path="res://assets/animations/victoire_1.png" id="3_c6vuv"]
+[ext_resource type="Texture2D" uid="uid://c4i28otqbwoa8" path="res://assets/animations/victoire bis-2.png" id="3_t4ikh"]
+[ext_resource type="Texture2D" uid="uid://dc10cur8xgybq" path="res://assets/animations/victoire bis-3.png" id="4_87w8a"]
 [ext_resource type="Texture2D" uid="uid://cc0x62pngwimr" path="res://assets/animations/End_banner.png" id="4_egps7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87w8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_egps7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t4ikh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_87w8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="IntroScreen" type="Control"]
 layout_mode = 3
@@ -50,10 +69,11 @@ offset_bottom = 604.0
 theme = ExtResource("2_p23fs")
 text = "Start the show"
 
-[node name="Victoire1" type="Sprite2D" parent="."]
+[node name="Victoire1" type="AnimatedSprite2D" parent="."]
 position = Vector2(403, 591)
 scale = Vector2(0.405029, 0.405029)
-texture = ExtResource("3_c6vuv")
+sprite_frames = SubResource("SpriteFrames_87w8a")
+autoplay = "default"
 
 [node name="EndBanner" type="Sprite2D" parent="."]
 position = Vector2(649, 426)
