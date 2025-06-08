@@ -73,7 +73,7 @@ texture = ExtResource("3_0ld40")
 
 [node name="Ball" parent="." instance=ExtResource("4_jyhfs")]
 z_index = 7
-position = Vector2(260, 366)
+position = Vector2(269, 353)
 scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
