@@ -43,8 +43,8 @@ max_contacts_reported = 2
 script = ExtResource("1_7s4qf")
 
 [node name="Ball_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 2)
-scale = Vector2(0.5, 0.509)
+position = Vector2(-1, 3)
+scale = Vector2(0.59375, 0.6295)
 sprite_frames = SubResource("SpriteFrames_f7cbr")
 frame_progress = 0.377784
 
