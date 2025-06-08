@@ -56,7 +56,7 @@ func move_towards_ball(ball_final_position):
 
 func _on_main_send_bouncing_info(bouncing_info, body) -> void:
 	var ball_is_bouncing = bouncing_info
-	if ball_is_bouncing == 0:
+	if ball_is_bouncing == 0 and body.is_in_group('ball'):
 		ball_caught.emit(body)
 		velocity = Vector2(0,0)
 		new_ball()
