@@ -24,6 +24,7 @@ texture = ExtResource("1_sj0jd")
 position = Vector2(579, 171)
 rotation = -6.28319
 scale = Vector2(18.7781, 11.867)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_akm2q")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

@@ -33,10 +33,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtckm"]
-size = Vector2(268, 190.5)
+size = Vector2(305, 204.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx0cp"]
-size = Vector2(271, 165)
+size = Vector2(304, 206)
 
 [sub_resource type="Curve2D" id="Curve2D_ox2ss"]
 _data = {
@@ -51,19 +51,20 @@ collision_mask = 2
 script = ExtResource("1_f65hk")
 
 [node name="juggler_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3, -103)
-scale = Vector2(0.15, 0.15)
+position = Vector2(13.7, -76.8)
+scale = Vector2(0.166309, 0.175586)
 sprite_frames = SubResource("SpriteFrames_qtckm")
 autoplay = "default"
+frame_progress = 0.346008
 
 [node name="juggler_detection_area" type="Area2D" parent="."]
 
 [node name="juggler_detection_shape" type="CollisionShape2D" parent="juggler_detection_area"]
-position = Vector2(-2, -154.25)
+position = Vector2(14.5, -147.125)
 shape = SubResource("RectangleShape2D_qtckm")
 
 [node name="juggler_collision" type="CollisionShape2D" parent="." groups=["juggler"]]
-position = Vector2(-1.5, -170.5)
+position = Vector2(15, -150)
 shape = SubResource("RectangleShape2D_qx0cp")
 
 [node name="all_ball" type="Path2D" parent="."]

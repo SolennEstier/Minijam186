@@ -44,7 +44,7 @@ animations = [{
 size = Vector2(86, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
-size = Vector2(1166, 41)
+size = Vector2(1166, 52.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muem4"]
 size = Vector2(187.5, 477)
@@ -64,7 +64,7 @@ position = Vector2(249, 366)
 scale = Vector2(3, 3)
 
 [node name="juggler_body" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(564, 400)
+position = Vector2(564, 379)
 scale = Vector2(0.4, 0.4)
 motion_mode = 1
 
@@ -237,7 +237,7 @@ position = Vector2(29, 2)
 script = ExtResource("16_jbj1t")
 
 [node name="down" type="CollisionShape2D" parent="bouncy_boundary"]
-position = Vector2(545, 454)
+position = Vector2(545, 448.25)
 shape = SubResource("RectangleShape2D_jkv2x")
 
 [node name="right" type="CollisionShape2D" parent="bouncy_boundary"]
