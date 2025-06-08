@@ -41,11 +41,11 @@ size = Vector2(305, 204.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx0cp"]
 size = Vector2(304, 206)
 
-[sub_resource type="Curve2D" id="Curve2D_ox2ss"]
+[sub_resource type="Curve2D" id="Curve2D_0isnm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 98, -110, 0, 0, 0, 0, 86, -153, 0, 0, 0, 0, 77, -185, 0, 0, 0, 0, 59, -228, 0, 0, 0, 0, 37, -257, 0, 0, 0, 0, 17, -281, 0, 0, 0, 0, -9, -310, 0, 0, 0, 0, -41, -313, 0, 0, 0, 0, -77, -282, 0, 0, 0, 0, -88, -250, 0, 0, 0, 0, -93, -181, 0, 0, 0, 0, -65, -204, 0, 0, 0, 0, -39, -233, 0, 0, 0, 0, -17, -252, 0, 0, 0, 0, 8, -268, 0, 0, 0, 0, 48, -286, 0, 0, 0, 0, 72, -276, 0, 0, 0, 0, 89, -246, 0, 0, 0, 0, 97, -224, 0, 0, 0, 0, 106, -197, 0, 0, 0, 0, 114, -170, 0, 0, 0, 0, 117, -135, 0, 0, 0, 0, 119, -111, 0, 0, 0, 0, 98, -110)
+"points": PackedVector2Array(0, 0, 0, 0, -97, -187, 0, 0, 0, 0, -33, -253, 0, 0, 0, 0, 0, -290, 0, 0, 0, 0, 37, -326, 0, 0, 0, 0, 70, -336, 0, 0, 0, 0, 100, -304, 0, 0, 0, 0, 115, -241, 0, 0, 0, 0, 123, -174, 0, 0, 0, 0, 127, -106, 0, 0, 0, 0, 22, -302, 0, 0, 0, 0, 2, -327, 0, 0, 0, 0, -23, -349, 0, 0, 0, 0, -41, -356, 0, 0, 0, 0, -57, -351, 0, 0, 0, 0, -73, -339, 0, 0, 0, 0, -81, -317, 0, 0, 0, 0, -87, -298, 0, 0, 0, 0, -95, -250, 0, 0, 0, 0, -97, -187)
 }
-point_count = 24
+point_count = 19
 
 [node name="juggler_body" type="CharacterBody2D"]
 z_index = 5
@@ -72,10 +72,10 @@ position = Vector2(15, -150)
 shape = SubResource("RectangleShape2D_qx0cp")
 
 [node name="all_ball" type="Path2D" parent="."]
-curve = SubResource("Curve2D_ox2ss")
+curve = SubResource("Curve2D_0isnm")
 
 [node name="ball_in" parent="all_ball" instance=ExtResource("5_y2wo8")]
-position = Vector2(98, -110)
-rotation = -1.84294
+position = Vector2(-97, -187)
+rotation = -0.800782
 
 [connection signal="body_entered" from="juggler_detection_area" to="." method="_on_juggler_detection_area_body_entered"]
