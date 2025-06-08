@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		if arrow.rotation_degrees > -45 :
 			arrow.rotation_degrees -= angle_move_speed
 	if Input.is_action_pressed("ui_down") and move_allowed == true:
-		if arrow.rotation_degrees < 0 :
+		if arrow.rotation_degrees < -15 :
 			arrow.rotation_degrees += angle_move_speed
 		
 	#updating trajectory
