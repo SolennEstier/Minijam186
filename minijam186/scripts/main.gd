@@ -73,7 +73,7 @@ func ball_missed(body):
 	## Remplacer ce qui suit par ce qui arrive quand le jongleur rate
 
 	node_2d.choque_and_decu()
-	if number_of_missed_balls != 3:
+	if number_of_missed_balls != 2:
 		var new_ball = ball_scene.instantiate()
 		add_child(new_ball)
 		control_over_ball = 1

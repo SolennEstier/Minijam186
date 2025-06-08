@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=19 format=4 uid="uid://ctkm3s4cu0nht"]
 
-[ext_resource type="FontFile" uid="uid://dkex26d4d3axt" path="res://assets/fonts/dogbangy/Dogbangy.ttf" id="1_7xouh"]
-[ext_resource type="Texture2D" uid="uid://5vx3u3y8cncy" path="res://assets/animations/bouton_1.png" id="2_xsnil"]
+[ext_resource type="FontFile" uid="uid://dkex26d4d3axt" path="res://assets/fonts/dogbangy/Dogbangy.ttf" id="1_ddhsp"]
+[ext_resource type="Texture2D" uid="uid://5vx3u3y8cncy" path="res://assets/animations/bouton_1.png" id="2_2ar8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx3iq"]
 content_margin_left = 4.0
@@ -49,7 +49,7 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhous"]
-texture = ExtResource("2_xsnil")
+texture = ExtResource("2_2ar8x")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6smf6"]
 content_margin_left = 4.0
@@ -1460,7 +1460,7 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 
 [resource]
-default_font = ExtResource("1_7xouh")
+default_font = ExtResource("1_ddhsp")
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -1479,7 +1479,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 33
-Button/fonts/font = ExtResource("1_7xouh")
+Button/fonts/font = ExtResource("1_ddhsp")
 Button/styles/disabled = SubResource("StyleBoxFlat_tx3iq")
 Button/styles/focus = SubResource("StyleBoxFlat_xsnil")
 Button/styles/hover = SubResource("StyleBoxFlat_nhous")
@@ -1511,6 +1511,6 @@ RichTextLabel/fonts/bold_font = SubResource("FontVariation_140tu")
 RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_q5l3a")
 RichTextLabel/fonts/italics_font = SubResource("FontVariation_5gvgu")
 RichTextLabel/fonts/mono_font = SubResource("FontFile_w17mw")
-RichTextLabel/fonts/normal_font = ExtResource("1_7xouh")
+RichTextLabel/fonts/normal_font = ExtResource("1_ddhsp")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_lc3s5")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_fq441")

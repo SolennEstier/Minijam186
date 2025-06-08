@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="5_5xwn4"]
 [ext_resource type="PackedScene" uid="uid://bvdra1l0m5w65" path="res://scenes/player.tscn" id="6_3i82n"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="7_3mf5k"]
-[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="8_r2ue6"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="8_r2ue6"]
 [ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="9_l1g8i"]
 [ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="10_8qpon"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="11_fu4xf"]
