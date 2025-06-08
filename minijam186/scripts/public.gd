@@ -16,4 +16,5 @@ func jumping():
 	public_sprite.play()
 
 func choque_and_decu():
+	public_sprite.animation='default'
 	public_sprite.pause()

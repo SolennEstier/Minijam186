@@ -106,7 +106,6 @@ script = ExtResource("1_ml6ga")
 position = Vector2(575, 324)
 scale = Vector2(0.534259, 0.4)
 sprite_frames = SubResource("SpriteFrames_75dnk")
-animation = &"jump"
 autoplay = "default"
 
 [node name="jump" type="AnimationPlayer" parent="."]
