@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		if arrow.rotation_degrees > -45 :
 			arrow.rotation_degrees -= angle_move_speed
 	if Input.is_action_pressed("ui_down") and move_allowed == true:
-		if arrow.rotation_degrees < -15 :
+		if arrow.rotation_degrees < -20 :
 			arrow.rotation_degrees += angle_move_speed
 		
 	#updating trajectory
@@ -88,7 +88,7 @@ func calculate_target_destination(parabola_coeffs):
 	var a = parabola_coeffs[0]
 	var b = -2*a*p1+parabola_coeffs[1]
 	var c = a*p1*p1 + parabola_coeffs[2]- impact_point_y
-	var size_chest=60
+	var size_chest=40
 	var impact_point_x = (-b+sqrt(b*b-4*a*(c+size_chest)))/(2*a)
 	
 	impact_point.position.x = impact_point_x
