@@ -53,7 +53,7 @@ func move_towards_ball(ball_final_position):
 	if level == 3:
 		# TODO : implémenter ici le déplacement en skate joliment
 		#position.x = target_position
-		move_speed = 300
+		move_speed = 500
 	velocity = Vector2(x_speed, 0).normalized()*move_speed
 	print(velocity)
 
