@@ -234,10 +234,10 @@ shape = SubResource("RectangleShape2D_jbj1t")
 
 [node name="Button" type="Button" parent="Obstacle"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -65.0
-offset_top = -71.0
-offset_right = 21.0
-offset_bottom = 26.0
+offset_left = -40.0
+offset_top = 184.0
+offset_right = 46.0
+offset_bottom = 281.0
 
 [node name="bouncy_boundary" type="StaticBody2D" parent="."]
 visibility_layer = 3
