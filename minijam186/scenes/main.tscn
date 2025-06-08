@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=23 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="14_a8y0u"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(1160, 20)
@@ -35,6 +36,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbj1t"]
 size = Vector2(86, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
+size = Vector2(1166, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muem4"]
+size = Vector2(187.5, 477)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_o5qli")
@@ -58,12 +65,15 @@ motion_mode = 1
 position = Vector2(231, 385)
 
 [node name="down_boundary" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(-8, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down_boundary"]
 position = Vector2(574, 434)
 shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="right_boundary" type="RigidBody2D" parent="."]
+position = Vector2(112, -78)
 collision_layer = 3
 collision_mask = 3
 
@@ -128,7 +138,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Move trajectory with arrows"
 
 [node name="Obstacle" type="StaticBody2D" parent="." groups=["obstacle"]]
-position = Vector2(116, 101)
+position = Vector2(114, 164)
 script = ExtResource("14_jkv2x")
 
 [node name="Obstacle_sprite" type="AnimatedSprite2D" parent="Obstacle"]
@@ -147,9 +157,34 @@ offset_top = -71.0
 offset_right = 21.0
 offset_bottom = 26.0
 
+[node name="bouncy_boundary" type="StaticBody2D" parent="."]
+visibility_layer = 3
+position = Vector2(29, 2)
+script = ExtResource("16_jbj1t")
+
+[node name="down" type="CollisionShape2D" parent="bouncy_boundary"]
+position = Vector2(545, 454)
+shape = SubResource("RectangleShape2D_jkv2x")
+
+[node name="right" type="CollisionShape2D" parent="bouncy_boundary"]
+position = Vector2(1103, 223)
+shape = SubResource("RectangleShape2D_muem4")
+
+[node name="bouncing_timer" type="Timer" parent="bouncy_boundary"]
+wait_time = 2.0
+
+[node name="test timer" type="TextEdit" parent="bouncy_boundary"]
+offset_left = 756.0
+offset_top = 91.0
+offset_right = 1006.0
+offset_bottom = 179.0
+
+[connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]
+[connection signal="has_bounced_enough" from="Ball" to="." method="_on_ball_has_bounced_enough"]
 [connection signal="ball_caught" from="juggler_body" to="." method="_on_juggler_body_ball_caught"]
 [connection signal="throw_ball" from="player_body" to="." method="_on_player_body_throw_ball"]
 [connection signal="body_entered" from="down_boundary" to="." method="_on_down_boundary_body_entered"]
 [connection signal="timeout" from="public_bubble_1_timer" to="." method="_on_public_bubble_1_timer_timeout"]
 [connection signal="button_down" from="Obstacle/Button" to="Obstacle" method="_on_button_button_down"]
 [connection signal="button_up" from="Obstacle/Button" to="Obstacle" method="_on_button_button_up"]
+[connection signal="timeout" from="bouncy_boundary/bouncing_timer" to="Ball" method="_on_bouncing_timer_timeout"]

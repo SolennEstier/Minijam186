@@ -9,8 +9,6 @@ var level: int
 
 var target_position = 0
 
-func _ready():
-	pass
 
 func set_level(new_level):
 	level = new_level

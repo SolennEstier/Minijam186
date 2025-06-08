@@ -7,11 +7,17 @@ extends Node2D
 @onready var ballmissed: AudioStreamPlayer = $ballmissed
 @onready var node_2d: Node2D = $Node2D
 @onready var tutorial_2: RichTextLabel = $Tutorial2
+@onready var bouncing_timer: Timer = $bouncy_boundary/bouncing_timer
+
+@onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
+
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
 var current_level: int
 var fixed_moves = 2
+var ball_is_bouncing = 0
+var control_over_ball = 1
 
 @export var dialogue: Dialogue
 
@@ -37,8 +43,13 @@ func _on_juggler_body_ball_caught(body) -> void:
 	# Spawn a new ball
 	var new_ball = ball_scene.instantiate()
 	add_child(new_ball)
+	control_over_ball = 1
+	ball_is_bouncing == 0
 	new_ball.position = start_ball_position
 	active_ball = new_ball
+	active_ball.body_entered.connect(self._on_ball_body_entered)
+	active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
+	bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	public_congratulations()
 	if current_level == 0:
 		fixed_moves -= 1
@@ -52,8 +63,13 @@ func ball_missed(body):
 	## Remplacer ce qui suit par ce qui arrive quand le jongleur rate
 	var new_ball = ball_scene.instantiate()
 	add_child(new_ball)
+	control_over_ball = 1
+	ball_is_bouncing == 0
 	new_ball.position = start_ball_position
 	active_ball = new_ball
+	active_ball.body_entered.connect(self._on_ball_body_entered)
+	active_ball.has_bounced_enough.connect(self._on_ball_has_bounced_enough)
+	bouncing_timer.timeout.connect(active_ball._on_bouncing_timer_timeout)
 	ballmissed.play()
 	node_2d.choque_and_decu()
 	await get_tree().create_timer(2.0).timeout
@@ -61,8 +77,10 @@ func ball_missed(body):
 
 
 func _on_player_body_throw_ball(angle, impact_point, force, velocity) -> void:
-	active_ball.throw(angle, force, velocity)
-	juggler_body.move_towards_ball(impact_point)
+	if control_over_ball == 1:
+		active_ball.throw(angle, force, velocity)
+		juggler_body.move_towards_ball(impact_point)
+		control_over_ball = 0
 
 
 func _on_down_boundary_body_entered(body: Node2D) -> void:
@@ -86,3 +104,17 @@ func set_level(new_level):
 	player_body.level = new_level
 	if new_level != 0:
 		player_body.move_allowed = true
+
+
+func _on_ball_body_entered(body: Node) -> void:
+	if body.name == "bouncy_boundary" and ball_is_bouncing == 0:
+		bouncing_timer.start()
+		print("START")
+		ball_is_bouncing = 1
+
+	
+func _on_ball_has_bounced_enough(body) -> void:
+	print("ENOUGH")
+	bouncing_timer.stop()
+	ball_missed(body)
+	ball_is_bouncing = 0
