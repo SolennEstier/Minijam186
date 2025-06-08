@@ -38,7 +38,6 @@ scale = Vector2(0.4, 0.4)
 motion_mode = 1
 
 [node name="player_body" parent="." instance=ExtResource("6_3i82n")]
-z_index = 2
 position = Vector2(231, 385)
 
 [node name="down_boundary" type="Area2D" parent="."]

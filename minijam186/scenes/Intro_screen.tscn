@@ -1,8 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://6a7hgryr1g5q"]
+[gd_scene load_steps=14 format=3 uid="uid://6a7hgryr1g5q"]
 
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="1_5jhsw"]
 [ext_resource type="Script" uid="uid://c6rlxobky1s6e" path="res://scripts/intro_screen.gd" id="1_kov8j"]
 [ext_resource type="Resource" uid="uid://dye62h1o6qfct" path="res://assets/dialogues.tres" id="2_k3ydu"]
+[ext_resource type="Texture2D" uid="uid://c0pygm525nud3" path="res://assets/animations/Tete_jongleuse_1.png" id="4_kxt6i"]
+[ext_resource type="Texture2D" uid="uid://dkrmeetleg4td" path="res://assets/animations/Tete_jongleuse_2.png" id="5_qkbi1"]
+[ext_resource type="Texture2D" uid="uid://b4h164g15m2nc" path="res://assets/animations/Tete_jongleuse_3.png" id="6_yks82"]
+[ext_resource type="Texture2D" uid="uid://ccgaxcrh6p0ta" path="res://assets/animations/Tetes-1.png" id="7_m8we1"]
+[ext_resource type="Texture2D" uid="uid://byknxpld3538l" path="res://assets/animations/Tetes-2.png" id="8_2no3g"]
+[ext_resource type="Texture2D" uid="uid://dbtblyya02era" path="res://assets/animations/Tetes-3.png" id="9_lq5sg"]
+[ext_resource type="Texture2D" uid="uid://cv8e3a748baqf" path="res://assets/animations/Tetes-4.png" id="10_8a0cf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_174j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kxt6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qkbi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yks82")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ImageTexture" id="ImageTexture_l0wth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsjvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m8we1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2no3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lq5sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8a0cf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="IntroScreen" type="Control"]
 layout_mode = 3
@@ -22,20 +68,20 @@ color = Color(0.609339, 0, 0.0948253, 1)
 
 [node name="juggler_dialogue" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 447.0
-offset_top = 92.0
-offset_right = 1078.0
-offset_bottom = 244.0
+offset_left = 483.0
+offset_top = 78.0
+offset_right = 1114.0
+offset_bottom = 230.0
 theme = ExtResource("1_5jhsw")
 theme_override_font_sizes/normal_font_size = 40
 text = "Hi ! Thank you so much for helping me with my show, you are so nice =)"
 
 [node name="player_dialogue" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 416.0
-offset_right = 705.0
-offset_bottom = 568.0
+offset_left = 131.0
+offset_top = 341.0
+offset_right = 762.0
+offset_bottom = 493.0
 theme = ExtResource("1_5jhsw")
 theme_override_font_sizes/normal_font_size = 40
 text = "Haha, no problem !
@@ -43,11 +89,31 @@ text = "Haha, no problem !
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 790.0
-offset_top = 493.0
-offset_right = 1061.0
-offset_bottom = 604.0
+offset_left = 420.0
+offset_top = 519.0
+offset_right = 691.0
+offset_bottom = 630.0
 theme = ExtResource("1_5jhsw")
 text = "Start the show"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="jongleuse_tete" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(238, 342)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_174j3")
+frame = 2
+
+[node name="bubble1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_l0wth")
+
+[node name="mechant_tete" type="AnimatedSprite2D" parent="."]
+position = Vector2(905, 563)
+scale = Vector2(-0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_vsjvs")
+frame = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

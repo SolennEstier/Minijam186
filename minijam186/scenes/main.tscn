@@ -1,18 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://dm53thglra83n"]
+[gd_scene load_steps=27 format=3 uid="uid://dm53thglra83n"]
 
 [ext_resource type="Script" uid="uid://dyavyrdbbbbv5" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cfdgabkuqey76" path="res://scenes/juggler.tscn" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://dye62h1o6qfct" path="res://assets/dialogues.tres" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://bvdra1l0m5w65" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cbf2iy84v21yy" path="res://scenes/ball.tscn" id="4_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://dr5mnvjloc2pg" path="res://assets/Placeholders/public_bubble_placeholder_2.png" id="5_tefeu"]
 [ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/themes/dialogue_theme.tres" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c6j3xb70lm2la" path="res://scenes/public.tscn" id="6_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cnlc3odhnmo2b" path="res://assets/sound/minijama182-2.wav" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://cyqwtdc8sjg4g" path="res://scripts/public_bubble_1.gd" id="7_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://b7gg83spp7jsi" path="res://assets/sound/crowd-cheer-in-school-auditorium-driken5482.mp3" id="8_85g3d"]
 [ext_resource type="AudioStream" uid="uid://bx7sty7uslfl5" path="res://assets/sound/crowd-shocked-reaction-universfield.mp3" id="9_choun"]
+[ext_resource type="Texture2D" uid="uid://8ojviuygu7xp" path="res://assets/animations/Bulles-3.png" id="9_muem4"]
 [ext_resource type="Texture2D" uid="uid://41ytxdrxq0lo" path="res://assets/Screens/Fond.png" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://dykjddfoqltnd" path="res://assets/animations/Bulles-1.png" id="11_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bw8mkrvlnrk6m" path="res://assets/animations/Bulles-4.png" id="12_0ld40"]
 [ext_resource type="Texture2D" uid="uid://1v3gnmloru46" path="res://assets/icon.svg" id="14_a8y0u"]
 [ext_resource type="Script" uid="uid://cjceacj3u3t8q" path="res://scripts/obstacle.gd" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://vb5anbehucgy" path="res://scripts/bouncy_boundary.gd" id="16_jbj1t"]
@@ -23,6 +25,9 @@ size = Vector2(1160, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(179, 537)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dp3eg"]
+light_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jkv2x"]
 animations = [{
@@ -64,7 +69,7 @@ scale = Vector2(0.4, 0.4)
 motion_mode = 1
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(231, 385)
+position = Vector2(211, 373)
 
 [node name="down_boundary" type="Area2D" parent="."]
 z_index = 1
@@ -87,22 +92,89 @@ shape = SubResource("RectangleShape2D_tbgi4")
 position = Vector2(-6, 2)
 
 [node name="public_bubble_1" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_dp3eg")
 offset_top = 477.0
 offset_right = 274.0
 offset_bottom = 691.0
+scale = Vector2(0.37592, 0.37592)
 theme = ExtResource("6_o6xl0")
-texture = ExtResource("5_tefeu")
+texture = ExtResource("9_muem4")
 script = ExtResource("7_ya4ey")
 metadata/_edit_use_anchors_ = true
 
 [node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_1"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0379896
+anchor_top = 0.0972025
+anchor_right = 0.14951
+anchor_bottom = 0.347203
 offset_left = 76.0
 offset_top = 62.0
 offset_right = 229.0
 offset_bottom = 120.0
+scale = Vector2(1.01625, 1)
 theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 0
 text = "This is so great !"
+metadata/_edit_use_anchors_ = true
+
+[node name="public_bubble_2" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_dp3eg")
+offset_left = 805.0
+offset_top = 485.0
+offset_right = 1125.0
+offset_bottom = 805.0
+scale = Vector2(0.37592, 0.37592)
+theme = ExtResource("6_o6xl0")
+texture = ExtResource("11_dp3eg")
+script = ExtResource("7_ya4ey")
+metadata/_edit_use_anchors_ = true
+
+[node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0130508
+anchor_top = 0.0556379
+anchor_right = 0.174449
+anchor_bottom = 0.305638
+offset_left = 76.0
+offset_top = 62.0
+offset_right = 229.0
+offset_bottom = 120.0
+scale = Vector2(1.01625, 1)
+theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 0
+text = "I could watch this all night !"
+metadata/_edit_use_anchors_ = true
+
+[node name="public_bubble_3" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_dp3eg")
+offset_left = 465.0
+offset_top = 478.0
+offset_right = 785.0
+offset_bottom = 798.0
+scale = Vector2(0.37592, 0.37592)
+theme = ExtResource("6_o6xl0")
+texture = ExtResource("12_0ld40")
+script = ExtResource("7_ya4ey")
+metadata/_edit_use_anchors_ = true
+
+[node name="publicbubble1text" type="RichTextLabel" parent="public_bubble_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0285139
+anchor_top = 0.0140732
+anchor_right = 0.216014
+anchor_bottom = 0.264073
+offset_left = 76.0
+offset_top = 62.0
+offset_right = 229.0
+offset_bottom = 120.0
+scale = Vector2(1.01625, 1)
+theme = ExtResource("6_o6xl0")
+theme_override_font_sizes/normal_font_size = 0
+text = "I will never get tired of her !"
 metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_1_timer" type="Timer" parent="."]
@@ -183,6 +255,7 @@ offset_right = 1006.0
 offset_bottom = 179.0
 
 [node name="Light" parent="." instance=ExtResource("17_muem4")]
+position = Vector2(16, 5)
 
 [connection signal="send_bouncing_info" from="." to="juggler_body" method="_on_main_send_bouncing_info"]
 [connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]

@@ -8,6 +8,9 @@ extends Node2D
 @onready var node_2d: Node2D = $Node2D
 @onready var tutorial_2: RichTextLabel = $Tutorial2
 @onready var bouncing_timer: Timer = $bouncy_boundary/bouncing_timer
+@onready var public_bubble_2: TextureRect = $public_bubble_2
+@onready var public_bubble_3: TextureRect = $public_bubble_3
+@onready var public_bubble_1: TextureRect = $public_bubble_1
 
 @onready var bouncy_boundary: StaticBody2D = $bouncy_boundary
 
@@ -24,13 +27,14 @@ var number_of_missed_balls = 0
 @export var dialogue: Dialogue
 
 @onready var active_ball = ball
-@onready var public_bubble_1: TextureRect = $public_bubble_1
 
 func _ready():
 	current_level = LevelHandler.current_level
 	set_level(current_level)
 	start_ball_position = ball.position
 	public_bubble_1.visible = false
+	public_bubble_2.visible = false
+	public_bubble_3.visible = false
 	if current_level > 0 :
 		tutorial_2.visible = true
 	elif current_level == 0 :
@@ -97,15 +101,12 @@ func _on_down_boundary_body_entered(body: Node2D) -> void:
 	
 	
 func public_congratulations():
-	var message = dialogue.applause.pick_random()
-	public_bubble_1.visible = true
-	public_bubble_1.change_text(message)
-	public_bubble_1_timer.start()
+	var chosen_bubble = [public_bubble_1, public_bubble_2, public_bubble_3].pick_random()
+	chosen_bubble.visible = true
 	ballreceived.play()
 	node_2d.jumping()
-	
-func _on_public_bubble_1_timer_timeout() -> void:
-	public_bubble_1.visible = false
+	await get_tree().create_timer(2.5).timeout
+	chosen_bubble.visible = false
 
 func set_level(new_level):
 	juggler_body.set_level(new_level)
