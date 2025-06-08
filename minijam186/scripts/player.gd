@@ -20,6 +20,9 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var world_boundary_y = 30
 
 
+func _ready():
+	player_sprite.frame = 0
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up") and move_allowed == true:
@@ -37,7 +40,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("throw"):
 		throw_ball.emit(arrow.rotation_degrees,impact_points[0], force, ball_velocity)
-
+		player_sprite.play("default")
 		
 	#draw trajectory
 	queue_redraw()

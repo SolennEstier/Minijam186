@@ -69,7 +69,7 @@ scale = Vector2(0.4, 0.4)
 motion_mode = 1
 
 [node name="player_body" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(211, 373)
+position = Vector2(212, 357)
 
 [node name="down_boundary" type="Area2D" parent="."]
 z_index = 1
