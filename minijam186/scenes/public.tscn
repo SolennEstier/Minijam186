@@ -1,21 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6j3xb70lm2la"]
 
-[ext_resource type="Texture2D" uid="uid://bwbt41u76n0m3" path="res://assets/animations/Gauche_Droite-1.png" id="1_conr0"]
 [ext_resource type="Script" uid="uid://belq3bjw4kcl1" path="res://scripts/public.gd" id="1_ml6ga"]
-[ext_resource type="Texture2D" uid="uid://dlx07a0bcrlaw" path="res://assets/animations/Gauche_Droite-2.png" id="2_ml6ga"]
+[ext_resource type="Texture2D" uid="uid://6slh3htab7og" path="res://assets/animations/Applause bis 1.png" id="2_ml6ga"]
+[ext_resource type="Texture2D" uid="uid://dk6gop1t6fbuy" path="res://assets/animations/Applause bis 2.png" id="3_75dnk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75dnk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_conr0")
+"texture": ExtResource("2_ml6ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_75dnk")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_ml6ga")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 2.43
+"speed": 0.5
 }]
 
 [sub_resource type="Animation" id="Animation_ml6ga"]
@@ -97,7 +100,6 @@ script = ExtResource("1_ml6ga")
 position = Vector2(575, 324)
 scale = Vector2(0.534259, 0.4)
 sprite_frames = SubResource("SpriteFrames_75dnk")
-autoplay = "default"
 
 [node name="jump" type="AnimationPlayer" parent="."]
 libraries = {
