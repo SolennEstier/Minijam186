@@ -21,6 +21,7 @@ extends Node2D
 
 signal send_bouncing_info
 signal juggler_caught_it
+signal juggler_failed
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var start_ball_position: Vector2
@@ -138,6 +139,7 @@ func set_level(new_level):
 
 func _on_ball_body_entered(body: Node) -> void:
 	if body.name == "bouncy_boundary" and ball_is_bouncing == 0:
+		juggler_failed.emit()
 		ballmissed.play()
 		bouncing_timer.start()
 		ball_is_bouncing = 1
