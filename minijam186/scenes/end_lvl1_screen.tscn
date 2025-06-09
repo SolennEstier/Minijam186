@@ -23,7 +23,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="IntroScreen" type="Control"]
+[node name="IntroScreen2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
