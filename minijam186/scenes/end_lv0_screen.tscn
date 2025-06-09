@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqtv8ady5iwen"]
+
+[ext_resource type="Script" path="res://scripts/end_lv0_screenkjh.gd" id="1_obgy4"]
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="3_31afc"]
+[ext_resource type="Texture2D" uid="uid://ccgaxcrh6p0ta" path="res://assets/animations/Tetes-1.png" id="7_r1nch"]
+[ext_resource type="Texture2D" uid="uid://byknxpld3538l" path="res://assets/animations/Tetes-2.png" id="8_0113y"]
+[ext_resource type="Texture2D" uid="uid://dbtblyya02era" path="res://assets/animations/Tetes-3.png" id="9_6un1i"]
+[ext_resource type="Texture2D" uid="uid://cv8e3a748baqf" path="res://assets/animations/Tetes-4.png" id="10_b75fe"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_l0wth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsjvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_r1nch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0113y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6un1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b75fe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Screen" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_obgy4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 650.0
+color = Color(0.609339, 0, 0.0948253, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 517.0
+offset_right = 778.0
+offset_bottom = 628.0
+theme = ExtResource("3_31afc")
+text = "But ..."
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="bubble1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_l0wth")
+
+[node name="mechant_tete" type="AnimatedSprite2D" parent="."]
+position = Vector2(238, 411)
+scale = Vector2(-0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_vsjvs")
+frame = 2
+flip_h = true
+
+[node name="player_dialogue" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.042
+anchor_bottom = 0.039
+offset_left = 389.0
+offset_top = 153.0
+offset_right = 1054.62
+offset_bottom = 358.728
+theme = ExtResource("3_31afc")
+text = "Hahah, I win ! (even if she managed to blow up the panel with her skate juggling)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

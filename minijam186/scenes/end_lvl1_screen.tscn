@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bads53rrd4hc"]
+
+[ext_resource type="Theme" uid="uid://ctkm3s4cu0nht" path="res://assets/dialogue_theme.tres" id="1_dew1q"]
+[ext_resource type="Texture2D" uid="uid://2fur4usfwsao" path="res://assets/animations/victoire bis-1.png" id="2_k5kaw"]
+[ext_resource type="Texture2D" uid="uid://c4i28otqbwoa8" path="res://assets/animations/victoire bis-2.png" id="3_6kjwc"]
+[ext_resource type="Texture2D" uid="uid://dc10cur8xgybq" path="res://assets/animations/victoire bis-3.png" id="4_aptog"]
+[ext_resource type="Texture2D" uid="uid://cc0x62pngwimr" path="res://assets/animations/End_banner.png" id="5_lmbsn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87w8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k5kaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6kjwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aptog")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="IntroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 650.0
+color = Color(0.609339, 0, 0.0948253, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 260.0
+offset_right = 1132.0
+offset_bottom = 647.0
+theme = ExtResource("1_dew1q")
+theme_override_font_sizes/normal_font_size = 40
+text = "Thank you all for this award ! I could not have done it without you, my precious friend, constantly pushing me to better myself !"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 416.0
+offset_right = 705.0
+offset_bottom = 568.0
+theme = ExtResource("1_dew1q")
+theme_override_font_sizes/normal_font_size = 40
+text = "Haha, no problem !
+(I will ruin you)"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 790.0
+offset_top = 493.0
+offset_right = 1061.0
+offset_bottom = 604.0
+theme = ExtResource("1_dew1q")
+text = "Start the show"
+
+[node name="Victoire1" type="AnimatedSprite2D" parent="."]
+position = Vector2(403, 591)
+scale = Vector2(0.405029, 0.405029)
+sprite_frames = SubResource("SpriteFrames_87w8a")
+autoplay = "default"
+
+[node name="EndBanner" type="Sprite2D" parent="."]
+position = Vector2(649, 426)
+scale = Vector2(0.41696, 0.41696)
+texture = ExtResource("5_lmbsn")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
