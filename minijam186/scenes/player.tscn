@@ -69,7 +69,6 @@ script = ExtResource("1_g2els")
 position = Vector2(4.06, -18.608)
 scale = Vector2(0.128965, 0.1295)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"happy"
 
 [node name="Arrow" parent="." instance=ExtResource("3_qhqgy")]
 visible = false

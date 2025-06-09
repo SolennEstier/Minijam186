@@ -87,9 +87,7 @@ func ball_missed(body):
 	number_of_missed_balls +=1
 	body.queue_free()
 	print("Raté !")
-	## Remplacer ce qui suit par ce qui arrive quand le jongleur rate
-
-	node_2d.choque_and_decu()
+	## Remplacer ce qui suit par ce qui arrive quand le jongleur rate	
 	if number_of_missed_balls != 2:
 		var new_ball = ball_scene.instantiate()
 		add_child(new_ball)
@@ -147,6 +145,7 @@ func _on_ball_body_entered(body: Node) -> void:
 		ballmissed.play()
 		bouncing_timer.start()
 		ball_is_bouncing = 1
+		node_2d.choque_and_decu()
 
 	
 func _on_ball_has_bounced_enough(body) -> void:

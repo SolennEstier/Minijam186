@@ -140,4 +140,6 @@ func _on_main_juggler_caught_it() -> void:
 func _on_main_juggler_failed() -> void:
 	player_sprite.play("happy")
 	await get_tree().create_timer(1).timeout
-	player_sprite.play("default")
+	player_sprite.animation="default"
+	player_sprite.frame = 3
+	player_sprite.pause
