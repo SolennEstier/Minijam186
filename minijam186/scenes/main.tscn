@@ -106,6 +106,7 @@ z_index = 20
 position = Vector2(-6, 2)
 
 [node name="public_bubble_1" type="TextureRect" parent="."]
+z_index = 21
 material = SubResource("CanvasItemMaterial_dp3eg")
 offset_top = 477.0
 offset_right = 274.0
@@ -134,6 +135,7 @@ text = "This is so great !"
 metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_2" type="TextureRect" parent="."]
+z_index = 21
 material = SubResource("CanvasItemMaterial_dp3eg")
 offset_left = 805.0
 offset_top = 485.0
@@ -163,6 +165,7 @@ text = "I could watch this all night !"
 metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_3" type="TextureRect" parent="."]
+z_index = 21
 material = SubResource("CanvasItemMaterial_dp3eg")
 offset_left = 465.0
 offset_top = 478.0
@@ -187,12 +190,13 @@ offset_right = 229.0
 offset_bottom = 120.0
 scale = Vector2(1.01625, 1)
 theme = ExtResource("6_o6xl0")
-theme_override_font_sizes/normal_font_size = 0
+theme_override_font_sizes/normal_font_size = 30
 text = "I will never get tired of her !"
 metadata/_edit_use_anchors_ = true
 
 [node name="public_bubble_4" type="TextureRect" parent="."]
 visible = false
+z_index = 21
 material = SubResource("CanvasItemMaterial_dp3eg")
 offset_left = 6.0
 offset_top = 218.0
@@ -318,7 +322,7 @@ offset_right = 1006.0
 offset_bottom = 179.0
 
 [node name="Light" parent="." instance=ExtResource("17_muem4")]
-position = Vector2(40, 1)
+position = Vector2(36, 13)
 
 [node name="rightparticule" type="CPUParticles2D" parent="."]
 position = Vector2(919, 87)
